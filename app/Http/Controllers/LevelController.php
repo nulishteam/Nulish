@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Question;
+use App\Models\Level;
 use Illuminate\Http\Request;
 
-class QuestionController extends Controller
+class LevelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return view('admin.question-master.index');
+        //
     }
 
     /**
@@ -22,11 +22,9 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(bool $isBulk = false)
+    public function create()
     {
-        $obj = new Question();
-        dd($obj);
-        return view('admin.question-master.edit', compact($obj));
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class QuestionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Level $level)
     {
         //
     }
@@ -54,10 +52,10 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Level $level)
     {
         //
     }
@@ -66,10 +64,10 @@ class QuestionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Level $level)
     {
         //
     }
@@ -77,10 +75,10 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Level $level)
     {
         //
     }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +21,18 @@ use App\Http\Controllers\DashboardController;
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LevelController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\HomeItemController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {return  view('landing.index');})->name('index');
 // Route::get('/index', function () {return  redirect()->route('index');});
@@ -57,10 +64,12 @@ Route::prefix('')->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('question-master', [QuestionController::class, 'index'])->name('question-master');
-    Route::get('user-master', [UserController::class, 'index'])->name('user-master');
-    Route::get('feedback-master', [FeedbackController::class, 'index'])->name('feedback-master');
-    Route::get('home-item-master', [HomeItemController::class, 'index'])->name('home-item-master');
+    Route::resource('question-master', QuestionController::class)->except(['update']);
+    Route::resource('level-master', LevelController::class)->except(['update']);
+    Route::resource('type-master', TypeController::class)->except(['update']);
+    Route::resource('user-master', UserController::class);
+    Route::resource('feedback-master', FeedbackController::class)->only(['index', 'create', 'show']);
+    Route::resource('home-item-master', HomeItemController::class);
 });
 
 Route::prefix('user-area')->middleware('auth')->group(function () {
