@@ -5,7 +5,7 @@
     <div class="container-fluid mx-3">
         <div class=" navbar-brand px-0 font-weight-bolder ms-sm-2">
 
-            <a href=" {{ route('dashboard') }} ">
+            <a href=" {{ route('user-area') }} ">
                 <img src="{{ asset('assets/img/logos/logo3.png') }}" width="70px" alt="">
             </a>
             @if ($titlePage)
@@ -33,8 +33,8 @@
             <ul class="navbar-nav  justify-content-end">
 
                 <li class="nav-item d-flex align-items-center mx-4" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Dashboard">
-                    <a href="{{ route('dashboard') }}" class="nav-link text-body font-weight-bold px-0">
+                    title="User Area">
+                    <a href="{{ route('user-area') }}" class="nav-link text-body font-weight-bold px-0">
                         <i class="bi bi-speedometer"></i>
                         <span class="d-sm-inline d-none"
                             onclick="event.preventDefault();document.getElementById('dashboard').submit();"></span>
@@ -157,8 +157,8 @@
                 <!-- Nav Item User Information-->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link" href="javascript:;" id="userDropdown" role="button"
-                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Profile</span>
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Profile</span>
                         <img class="img-profile rounded-circle" src="{{ asset('assets/img/favicon1.png') }}"
                             width="40px">
                     </a>

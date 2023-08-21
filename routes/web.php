@@ -22,18 +22,81 @@ use App\Http\Controllers\DashboardController;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {return  view('landing.index');})->name('index');
-Route::get('/index', function () {return  redirect()->route('index');});
-Route::get('/home', function () {return  redirect()->route('index');})->name('home');
-Route::get('/author', function () {return view('landing.author');})->name('author');
-Route::get('/about', function () {return view('landing.about');})->name('about');
-Route::get('/contact', function () {return view('landing.contact');})->name('contact');
+// Route::get('/', function () {return  view('landing.index');})->name('index');
+// Route::get('/index', function () {return  redirect()->route('index');});
+// Route::get('/home', function () {return  redirect()->route('index');})->name('home');
+// Route::get('/author', function () {return view('landing.author');})->name('author');
+// Route::get('/about', function () {return view('landing.about');})->name('about');
+// Route::get('/contact', function () {return view('landing.contact');})->name('contact');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::prefix('')->group(function () {
+    Route::get('', function () {
+        return view('landing.index');
+    })->name('index');
+
+    Route::get('index', function () {
+        return  redirect()->route('index');
+    });
+
+    Route::get('home', function () {
+        return  redirect()->route('index');
+    })->name('home');
+
+    Route::get('author', function () {
+        return view('landing.author');
+    })->name('author');
+
+    Route::get('contact', function () {
+        return view('landing.contact');
+    })->name('contact');
+});
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('question-master', [QuestionController::class, 'index'])->name('question-master');
+    Route::get('user-master', [UserController::class, 'index'])->name('user-master');
+    Route::get('feedback-master', [FeedbackController::class, 'index'])->name('feedback-master');
+    Route::get('home-item-master', [HomeItemController::class, 'index'])->name('home-item-master');
+});
+
+Route::prefix('user-area')->middleware('auth')->group(function () {
+    Route::get('', [DashboardController::class, 'index'])->name('user-area');
+    Route::post('sign-out', [SessionsController::class, 'destroy'])->name('logout');
+    Route::get('profile', [ProfileController::class, 'create'])->name('profile');
+    Route::post('user-profile', [ProfileController::class, 'update']);
+    Route::get('billing', function () {
+        return view('user-area.billing');
+    })->name('billing');
+    Route::get('tables', function () {
+        return view('user-area.tables');
+    })->name('tables');
+    Route::get('rtl', function () {
+        return view('user-area.rtl');
+    })->name('rtl');
+    Route::get('virtual-reality', function () {
+        return view('user-area.virtual-reality');
+    })->name('virtual-reality');
+    Route::get('notifications', function () {
+        return view('user-area.notifications');
+    })->name('notifications');
+    Route::get('static-sign-in', function () {
+        return view('user-area.static-sign-in');
+    })->name('static-sign-in');
+    Route::get('static-sign-up', function () {
+        return view('user-area.static-sign-up');
+    })->name('static-sign-up');
+    Route::get('user-management', function () {
+        return view('user-area.laravel-examples.user-management');
+    })->name('user-management');
+    Route::get('user-profile', function () {
+        return view('user-area.laravel-examples.user-profile');
+    })->name('user-profile');
+});
+
 Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('login');
@@ -47,35 +110,6 @@ Route::get('/reset-password/{token}', function ($token) {
     return view('sessions.password.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 
-Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
-Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
-Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
+
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('billing', function () {
-        return view('dashboard.billing');
-    })->name('billing');
-    Route::get('tables', function () {
-        return view('dashboard.tables');
-    })->name('tables');
-    Route::get('rtl', function () {
-        return view('dashboard.rtl');
-    })->name('rtl');
-    Route::get('virtual-reality', function () {
-        return view('dashboard.virtual-reality');
-    })->name('virtual-reality');
-    Route::get('notifications', function () {
-        return view('dashboard.notifications');
-    })->name('notifications');
-    Route::get('static-sign-in', function () {
-        return view('dashboard.static-sign-in');
-    })->name('static-sign-in');
-    Route::get('static-sign-up', function () {
-        return view('dashboard.static-sign-up');
-    })->name('static-sign-up');
-    Route::get('user-management', function () {
-        return view('dashboard.laravel-examples.user-management');
-    })->name('user-management');
-    Route::get('user-profile', function () {
-        return view('dashboard.laravel-examples.user-profile');
-    })->name('user-profile');
 });

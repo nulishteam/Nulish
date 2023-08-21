@@ -1,12 +1,14 @@
 @props(['activePage'])
 
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-end me-3 bg-gradient-dark opacity-9 top-10" id="sidenav-main">
+<aside
+    class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-end me-3 bg-gradient-dark opacity-9 top-10"
+    id="sidenav-main">
     <div class="sidenav-header sticky-top bg-gradient-dark">
         <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0 d-flex text-wrap align-items-center" href=" {{ route('profile') }} ">
+        <a class="navbar-brand m-0 d-flex text-wrap align-items-center" href=" {{ route('user-area') }} ">
             <i class="fa fa-home me-0 opacity-8 text-lg text-white"></i>
-            <span class="font-weight-bold text-white ms-2">Profile</span>
+            <span class="font-weight-bold text-white ms-2">User Area</span>
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -40,7 +42,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'dashboard' ? ' active bg-gradient-info opacity 8' : '' }} "
-                    href="{{ route('dashboard') }}">
+                    href="{{ route('user-area') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">dashboard</i>
                     </div>

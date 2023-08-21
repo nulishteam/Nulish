@@ -30,8 +30,7 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect('/dashboard');
-
+        return redirect()->route('user-area');
     }
 
     public function show()
@@ -45,9 +44,8 @@ class SessionsController extends Controller
         );
 
         return $status === Password::RESET_LINK_SENT
-        ? back()->with(['status' => __($status)])
-        : back()->withErrors(['email' => __($status)]);
-
+            ? back()->with(['status' => __($status)])
+            : back()->withErrors(['email' => __($status)]);
     }
 
     public function update()
@@ -73,15 +71,14 @@ class SessionsController extends Controller
         );
 
         return $status === Password::PASSWORD_RESET
-        ? redirect()->route('login')->with('status', __($status))
-        : back()->withErrors(['email' => [__($status)]]);
+            ? redirect()->route('login')->with('status', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
     }
 
     public function destroy()
     {
         auth()->logout();
 
-        return redirect('/sign-in');
+        return redirect()->route('login');
     }
-
 }
