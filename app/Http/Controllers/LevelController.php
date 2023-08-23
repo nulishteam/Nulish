@@ -14,7 +14,8 @@ class LevelController extends Controller
      */
     public function index()
     {
-        //
+        $levels = Level::all()->sortBy('level_weight');
+        return view('admin.level-master.index', compact('levels'));
     }
 
     /**
@@ -24,7 +25,8 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+        $obj = new Level();
+        return view('admin.level-master.edit', compact('obj'));
     }
 
     /**
@@ -35,7 +37,15 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'level_name' => 'required',
+            'level_weight' => 'required',
+        ]);
+        Level::updateOrCreate(
+            ['id' => decrypt($request->id)],
+            $request->all(),
+        );
+        return $this->index();
     }
 
     /**
@@ -55,9 +65,18 @@ class LevelController extends Controller
      * @param  \App\Models\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function edit(Level $level)
+    public function edit($id)
     {
-        //
+        if ($id == null) {
+            return abort(400);
+        }
+
+        $obj = Level::find($id);
+        if ($obj == null) {
+            return abort(404);
+        }
+
+        return view('admin.level-master.edit', compact('obj'));
     }
 
     /**
@@ -78,8 +97,15 @@ class LevelController extends Controller
      * @param  \App\Models\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Level $level)
+    public function destroy($id)
     {
-        //
+        if ($id == null) {
+            return abort(400);
+        }
+        $obj = Level::find($id);
+        $obj->delete();
+        return response()->json([
+            'message' => '<strong>' . $obj->level_name . '</strong> deleted successfully',
+        ]);
     }
 }

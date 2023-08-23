@@ -16,7 +16,8 @@ return new class extends Migration
         $this->down();
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
-            $table->string('level_name');
+            $table->string('level_name')->unique();
+            $table->integer('level_weight')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

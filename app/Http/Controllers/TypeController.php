@@ -14,7 +14,9 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        //dd($types);
+        return view('admin.type-master.index', compact('types'));
     }
 
     /**
@@ -24,7 +26,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        $obj = new Type();
+        return view('admin.type-master.edit', compact('obj'));
     }
 
     /**
@@ -35,7 +38,14 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'type_name' => 'required',
+        ]);
+        Type::updateOrCreate(
+            ['id' => decrypt($request->id)],
+            $request->all(),
+        );
+        return $this->index();
     }
 
     /**
@@ -55,9 +65,18 @@ class TypeController extends Controller
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type $type)
+    public function edit($id)
     {
-        //
+        if ($id == null) {
+            return abort(400);
+        }
+
+        $obj = Type::find($id);
+        if ($obj == null) {
+            return abort(404);
+        }
+
+        return view('admin.type-master.edit', compact('obj'));
     }
 
     /**
@@ -78,8 +97,15 @@ class TypeController extends Controller
      * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Type $type)
+    public function destroy($id)
     {
-        //
+        if ($id == null) {
+            return abort(400);
+        }
+        $obj = Type::find($id);
+        $obj->delete();
+        return response()->json([
+            'message' => '<strong>' . $obj->type_name . '</strong> deleted successfully',
+        ]);
     }
 }

@@ -94,6 +94,8 @@
                     <span class="nav-link-text ms-1">Notifications</span>
                 </a>
             </li>
+
+            {{-- Account Pages (Hidden)
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
                 </h6>
@@ -121,6 +123,66 @@
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
+                </a>
+            </li> --}}
+
+            {{-- Admin --}}
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Admin
+                </h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'user-master' ? ' active bg-gradient-info opacity 8' : '' }}  "
+                    href="{{ route('user-master.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">User Master</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'type-master' ? ' active bg-gradient-info opacity 8' : '' }}  "
+                    href="{{ route('type-master.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Type Master</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'question-master' ? ' active bg-gradient-info opacity 8' : '' }}  "
+                    href="{{ route('question-master.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Question Master</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'level-master' ? ' active bg-gradient-info opacity 8' : '' }}  "
+                    href="{{ route('level-master.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Level Master</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'feedback-master' ? ' active bg-gradient-info opacity 8' : '' }}  "
+                    href="{{ route('feedback-master.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Feedback Master</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'home-item-master' ? ' active bg-gradient-info opacity 8' : '' }}  "
+                    href="{{ route('home-item-master.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Home Item Master</span>
                 </a>
             </li>
         </ul>

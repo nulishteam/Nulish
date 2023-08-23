@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use Database\Seeders\AdeSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\FaizSeeder;
+use Database\Seeders\RivoSeeder;
+use Database\Seeders\LutfieSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@material.com',
-            'password' => ('secret'),
+        $this->call([
+            RivoSeeder::class,
+            FaizSeeder::class,
+            LutfieSeeder::class,
+            AdeSeeder::class,
         ]);
     }
 }

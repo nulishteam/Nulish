@@ -16,8 +16,9 @@ return new class extends Migration
         $this->down();
         Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->string('type_name');
+            $table->string('type_name')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

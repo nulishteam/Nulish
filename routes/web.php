@@ -64,9 +64,9 @@ Route::prefix('')->group(function () {
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::resource('question-master', QuestionController::class)->except(['update']);
-    Route::resource('level-master', LevelController::class)->except(['update']);
-    Route::resource('type-master', TypeController::class)->except(['update']);
+    Route::resource('question-master', QuestionController::class)->except(['update', 'show']);
+    Route::resource('level-master', LevelController::class)->except(['update', 'show']);
+    Route::resource('type-master', TypeController::class)->except(['update', 'show']);
     Route::resource('user-master', UserController::class);
     Route::resource('feedback-master', FeedbackController::class)->only(['index', 'create', 'show']);
     Route::resource('home-item-master', HomeItemController::class);
