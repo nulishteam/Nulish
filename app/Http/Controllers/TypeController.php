@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Type;
+use Exception;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller
@@ -12,11 +13,11 @@ class TypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($rspMsg = null)
     {
         $types = Type::all();
-        //dd($types);
-        return view('admin.type-master.index', compact('types'));
+        //dd($rspMsg->message);
+        return view('admin.type-master.index', compact('types', 'rspMsg'));
     }
 
     /**
@@ -38,14 +39,32 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'type_name' => 'required',
-        ]);
-        Type::updateOrCreate(
-            ['id' => decrypt($request->id)],
-            $request->all(),
-        );
-        return $this->index();
+        try {
+            $id = decrypt($request->id);
+            //Logic test
+            $cek = Type::where('id', '!=', $id)->where('deleted_at', null)->where('type_name', $request->type_name)->count();
+            if ($cek > 0) {
+                throw new Exception('<strong>' . $request->type_name . '</strong> already exists');
+            }
+
+            $request->validate([
+                'type_name' => 'required',
+            ]);
+            Type::updateOrCreate(
+                ['id' => $id],
+                $request->all(),
+            );
+
+            $msg = 'Saved successfully';
+            $rspMsg = (object) ['title' => 'Success', 'message' => $msg, 'status' => 'success'];
+            return $this->index($rspMsg);
+        } catch (Exception $ex) {
+            $obj = (object) $request->all();
+            $obj->id = $id == null ? 0 : $id;
+            $rspMsg = (object) ['title' => 'Error', 'message' => $ex->getMessage(), 'status' => 'error'];
+            return view('admin.type-master.edit', compact('obj', 'rspMsg'));
+        }
+
     }
 
     /**
@@ -75,7 +94,7 @@ class TypeController extends Controller
         if ($obj == null) {
             return abort(404);
         }
-
+        //dd($obj);
         return view('admin.type-master.edit', compact('obj'));
     }
 

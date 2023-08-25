@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class FaizSeeder extends Seeder
@@ -17,6 +16,7 @@ class FaizSeeder extends Seeder
         $this->call([
             TypeSeeder::class,
             LevelSeeder::class,
+            QuestionSeeder::class,
         ]);
     }
 }

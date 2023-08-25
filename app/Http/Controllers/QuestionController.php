@@ -12,9 +12,12 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($rspMsg = null, Request $request = null)
     {
-        return view('admin.question-master.index');
+        //$questions = Question::all()->loadMissing('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->sortBy([['level_id', 'asc'], ['updated_at', 'desc']]);
+        $questions = Question::with('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->orderBy('level_id')->orderBy('question_english')->paginate(20);
+        //dd($questions);
+        return view('admin.question-master.index', compact('questions', 'rspMsg'));
     }
 
     /**
@@ -22,7 +25,7 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(bool $isBulk = false)
+    public function create($isBulk = false)
     {
         $obj = new Question();
         dd($obj);
@@ -82,6 +85,14 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($id == null) {
+            return abort(400);
+        }
+        $obj = Question::find($id);
+        $obj->delete();
+        return response()->json([
+            'message' => 'Selected question deleted successfully',
+        ]);
+
     }
 }

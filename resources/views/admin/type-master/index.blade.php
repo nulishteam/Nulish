@@ -10,7 +10,7 @@
 
                     <nav class="navbar navbar-expand-lg px-0 mx-0 py-0 my-0 shadow-none border-radius-xl bg-gray-200">
                         <div class="container-fluid mx-3">
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav ms-auto">
                                 <li class="nav-item d-flex align-items-center">
                                     <a class="btn btn-info text-capitalize text-md px-3 py-2"
                                         href="javascript:window.location.replace('{{ route('type-master.create') }}')">
@@ -90,6 +90,14 @@
     </main>
     @push('js')
         <script>
+            @isset($rspMsg)
+                Swal.fire({
+                    title: '{{ $rspMsg->title }}',
+                    html: '{!! $rspMsg->message !!}',
+                    icon: '{{ $rspMsg->status }}',
+                });
+            @endisset
+
             function confirmDelete(obj) {
                 var token = $("input[name='_token']").attr("value");
                 Swal.fire({

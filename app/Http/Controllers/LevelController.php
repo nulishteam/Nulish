@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Level;
+use Exception;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
@@ -12,10 +13,10 @@ class LevelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($rspMsg = null)
     {
         $levels = Level::all()->sortBy('level_weight');
-        return view('admin.level-master.index', compact('levels'));
+        return view('admin.level-master.index', compact('levels', 'rspMsg'));
     }
 
     /**
@@ -37,15 +38,38 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'level_name' => 'required',
-            'level_weight' => 'required',
-        ]);
-        Level::updateOrCreate(
-            ['id' => decrypt($request->id)],
-            $request->all(),
-        );
-        return $this->index();
+        try {
+            $id = decrypt($request->id);
+            //Logic test
+            $cek = Level::where('id', '!=', $id)->where('deleted_at', null)->where('level_name', $request->level_name)->count();
+            if ($cek > 0) {
+                throw new Exception('<strong>' . $request->level_name . '</strong> already exists');
+            }
+
+            $cek = Level::where('id', '!=', $id)->where('deleted_at', null)->where('level_weight', $request->level_weight)->count();
+            if ($cek > 0) {
+                throw new Exception('There is another level with weight ' . $request->level_weight);
+            }
+
+            $request->validate([
+                'level_name' => 'required',
+                'level_weight' => 'required',
+            ]);
+            Level::updateOrCreate(
+                ['id' => $id],
+                $request->all(),
+            );
+
+            $msg = 'Saved successfully';
+            $rspMsg = (object) ['title' => 'Success', 'message' => $msg, 'status' => 'success'];
+            return $this->index($rspMsg);
+        } catch (Exception $ex) {
+            $obj = (object) $request->all();
+            $obj->id = $id == null ? 0 : $id;
+            $rspMsg = (object) ['title' => 'Error', 'message' => $ex->getMessage(), 'status' => 'error'];
+            return view('admin.level-master.edit', compact('obj', 'rspMsg'));
+
+        }
     }
 
     /**
