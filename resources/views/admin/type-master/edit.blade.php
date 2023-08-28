@@ -30,13 +30,14 @@
                         <input type="hidden" name="id" value="{{ encrypt($obj->id) }}">
 
                         <div class="row py-2">
-                            <div class="col-12 col-md-6 col-lg-4">
+                            <div class="col-12 col-md-6 col-lg-4 py-1">
                                 <div class="form-group">
                                     <label for="txtTypeName" class="form-label">Type Name</label>
                                     <input type="text" class="form-control border border-2 p-2" id="txtTypeName"
                                         name="type_name"
                                         value="@isset($obj->id) {{ $obj->type_name }} @endisset">
-                                    <small id="emailHelp" class="form-text text-muted">The name of Question Type</small>
+                                    <small id="typeNameHelp" class="form-text text-muted">The name of Question
+                                        Type</small>
                                 </div>
                             </div>
                         </div>

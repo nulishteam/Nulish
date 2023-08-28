@@ -70,12 +70,12 @@
                                                         <span>
                                                             <a href="javascript:window.location.replace('{{ route('question-master.edit', $question) }}');"
                                                                 class="btn btn-success m-0 py-1 px-3"
-                                                                data-original-title="Edit Level">
+                                                                data-original-title="Edit Question">
                                                                 <i class="fa fa-pencil-square-o"></i> Edit
                                                             </a>
                                                             <a href="javascript:confirmDelete({{ $question }});"
                                                                 class="btn btn-danger m-0 py-1 px-3"
-                                                                data-original-title="Delete Level">
+                                                                data-original-title="Delete Question">
                                                                 <i class="fa fa-trash"></i> Delete
                                                             </a>
 
@@ -117,6 +117,7 @@
                     icon: '{{ $rspMsg->status }}',
                 });
             @endisset
+
             function confirmDelete(obj) {
                 var token = $("input[name='_token']").attr("value");
                 Swal.fire({

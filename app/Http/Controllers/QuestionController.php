@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
+use App\Models\Level;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Exception;
 
 class QuestionController extends Controller
 {
@@ -12,12 +16,14 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($rspMsg = null, Request $request = null)
+    public function index($rspMsg = null, $filter = null)
     {
         //$questions = Question::all()->loadMissing('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->sortBy([['level_id', 'asc'], ['updated_at', 'desc']]);
-        $questions = Question::with('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->orderBy('level_id')->orderBy('question_english')->paginate(20);
+        $questions = Question::with('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->orderBy('level_id')->orderBy('type_id')->orderBy('question_english')->paginate(20);
+        $levels = $this->getAllLevel();
+        $types = $this->getAllType();
         //dd($questions);
-        return view('admin.question-master.index', compact('questions', 'rspMsg'));
+        return view('admin.question-master.index', compact('questions', 'rspMsg', 'levels', 'types'));
     }
 
     /**
@@ -28,8 +34,10 @@ class QuestionController extends Controller
     public function create($isBulk = false)
     {
         $obj = new Question();
-        dd($obj);
-        return view('admin.question-master.edit', compact($obj));
+        $levels = $this->getAllLevel();
+        $types = $this->getAllType();
+        //dd($levels);
+        return view('admin.question-master.edit', compact('obj', 'levels', 'types'));
     }
 
     /**
@@ -40,7 +48,38 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        try {
+            $id = decrypt($request->id);
+            // //Logic test
+            $cek = Question::where('id', '!=', $id)->where('deleted_at', null)->where('level_id', $request->level_id)->where('type_id', $request->type_id)->where('question_english', $request->question_english)->count();
+            if ($cek > 0) {
+                throw new Exception('Question already exists');
+            }
+
+            $request->validate([
+                'level_id' => 'required',
+                'type_id' => 'required',
+                'question_english' => 'required',
+            ]);
+
+            $request->merge(['created_by' => auth()->user()->id]);
+            Question::updateOrCreate(
+                ['id' => $id],
+                $request->all(),
+            );
+
+            $msg = 'Saved successfully';
+            $rspMsg = (object) ['title' => 'Success', 'message' => $msg, 'status' => 'success'];
+            return $this->index($rspMsg);
+        } catch (Exception $ex) {
+            $obj = (object) $request->all();
+            $obj->id = $id == null ? 0 : $id;
+            $rspMsg = (object) ['title' => 'Error', 'message' => $ex->getMessage(), 'status' => 'error'];
+            $levels = $this->getAllLevel();
+            $types = $this->getAllType();
+            return view('admin.question-master.edit', compact('obj', 'rspMsg', 'types', 'levels'));
+        }
     }
 
     /**
@@ -62,7 +101,18 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        //
+        if ($id == null) {
+            return abort(400);
+        }
+
+        $obj = Question::find($id);
+        if ($obj == null) {
+            return abort(404);
+        }
+        $levels = $this->getAllLevel();
+        $types = $this->getAllType();
+        //dd($obj);
+        return view('admin.question-master.edit', compact('obj', 'levels', 'types'));
     }
 
     /**
@@ -93,6 +143,14 @@ class QuestionController extends Controller
         return response()->json([
             'message' => 'Selected question deleted successfully',
         ]);
+    }
+    private function getAllLevel()
+    {
+        return Level::all()->where('level_weight', '<', '90');
+    }
 
+    private function getAllType()
+    {
+        return Type::all();
     }
 }
