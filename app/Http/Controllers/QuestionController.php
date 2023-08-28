@@ -17,6 +17,7 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($rspMsg = null, $filter = null)
+
     {
         //$questions = Question::all()->loadMissing('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->sortBy([['level_id', 'asc'], ['updated_at', 'desc']]);
         $questions = Question::with('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->orderBy('level_id')->orderBy('type_id')->orderBy('question_english')->paginate(20);
