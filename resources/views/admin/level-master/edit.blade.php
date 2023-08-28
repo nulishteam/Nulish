@@ -31,22 +31,23 @@
                         <input type="hidden" name="id" value="{{ encrypt($obj->id) }}">
 
                         <div class="row py-2">
-                            <div class="col-12 col-md-6 col-lg-4">
+                            <div class="col-12 col-md-6 col-lg-4 py-1">
                                 <div class="form-group">
                                     <label for="txtLevelName" class="form-label">Level Name</label>
                                     <input type="text" class="form-control border border-2 p-2" id="txtLevelName"
                                         name="level_name"
                                         value="@isset($obj->id){{ $obj->level_name }}@endisset">
-                                    <small id="emailHelp" class="form-text text-muted">The name of Level</small>
+                                    <small id="levelNameHelp" class="form-text text-muted">The name of Level</small>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
+                            <div class="col-12 col-md-6 col-lg-4 py-1">
                                 <div class="form-group">
                                     <label for="txtLevelWeight" class="form-label">Level Weight</label>
                                     <input type="number" class="form-control border border-2 p-2" id="txtLevelWeight"
                                         name="level_weight" min=1 max=100
                                         value=@isset($obj->id) {{ $obj->level_weight }} @endisset>
-                                    <small id="emailHelp" class="form-text text-muted">The weight of Level (indicates
+                                    <small id="levelWeightHelp" class="form-text text-muted">The weight of Level
+                                        (indicates
                                         the priority)</small>
                                 </div>
                             </div>

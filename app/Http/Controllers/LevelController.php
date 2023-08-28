@@ -24,7 +24,7 @@ class LevelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($isBulk = false)
     {
         $obj = new Level();
         return view('admin.level-master.edit', compact('obj'));
@@ -68,7 +68,6 @@ class LevelController extends Controller
             $obj->id = $id == null ? 0 : $id;
             $rspMsg = (object) ['title' => 'Error', 'message' => $ex->getMessage(), 'status' => 'error'];
             return view('admin.level-master.edit', compact('obj', 'rspMsg'));
-
         }
     }
 
