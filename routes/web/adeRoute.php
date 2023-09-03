@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 Contoh Route:
 Route::resource('coba', CobaController::class)->except(['update', 'show']);
 */
+
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'createForm']);
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'ContactForm'])->name('contact.store');

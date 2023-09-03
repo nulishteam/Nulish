@@ -25,7 +25,7 @@
                                     <a href="mailto:nulishofficial@gmail.com">nulishofficial@gmail.com</a>
                                     or contact using our contact form.
                                 </p>
-                                <form id="contact-form" method="post" autocomplete="off">
+                                <form id="contact-form" method="get" autocomplete="off">
                                     <div class="card-body p-0 my-3">
                                         <div class="row">
                                             <div class="col-md-6">
