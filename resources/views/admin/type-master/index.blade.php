@@ -14,7 +14,7 @@
                                 <li class="nav-item d-flex align-items-center">
                                     <a class="btn btn-info text-capitalize text-md px-3 py-2"
                                         href="javascript:window.location.replace('{{ route('type-master.create') }}')">
-                                        <i class="fa fa-plus"></i> Tambah
+                                        <i class="fa fa-plus"></i> Create
                                     </a>
                                 </li>
                             </ul>

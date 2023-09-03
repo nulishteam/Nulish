@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaizCobaController;
+use App\Http\Controllers\ImageController;
 
 // Route coba hanya untuk percobaan.
 Route::resource('faizCoba', FaizCobaController::class)->except(['update', 'show']);
+
+Route::get('/assets/private/img/{dir}/encrypt/{filename}/dir/protect/image', [ImageController::class, 'urlGen'])->name('img.retrieve');

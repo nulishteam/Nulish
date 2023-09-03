@@ -14,6 +14,7 @@ class Question extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = [
+        'question_key',
         'question_english',
         'question_indonesia',
         'level_id',

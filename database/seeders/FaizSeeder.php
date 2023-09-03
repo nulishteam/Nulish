@@ -17,6 +17,7 @@ class FaizSeeder extends Seeder
             TypeSeeder::class,
             LevelSeeder::class,
             QuestionSeeder::class,
+            HomeItemSeeder::class,
         ]);
     }
 }

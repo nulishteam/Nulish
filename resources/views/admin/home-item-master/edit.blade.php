@@ -31,7 +31,7 @@
                         <input type="hidden" name="id" value="{{ encrypt($obj->id) }}">
 
                         <div class="row py-2">
-                            <div class="col-lg-12">
+                            <div class="col-12 col-lg-6 py-1">
                                 <div class="form-group">
                                     <label for="txtTitle" class="font-weight-bold">Title</label>
                                     <input type="text" class="form-control border border-2 p-2" id="txtTitle"
@@ -40,19 +40,35 @@
 
                                 </div>
                             </div>
-                            {{-- <div class="col-12 col-md-4 col-ms-2">
-                                <div class="mb-4">
-                                    <label class="font-weight-bold mb-4">Select Image</label>
-                                    <input class="filepond-drop-label" type="file" id="image" name="image"
-                                        value="@isset($obj->id) {{ $obj->image }} @endisset">
+                            <div class="col-12 py-1">
+                                @isset($obj->image)
+                                    <div class="col-12 col-lg-6 py-1">
+                                        <img src="{{ route('img.retrieve', ['home_item', $obj->image]) }}"
+                                            class="img-fluid">
+                                    </div>
+                                @endisset
+                                <div class="col-12 col-lg-6 py-1">
+                                    <div class="form-group">
+                                        <label for="image" class="font-weight-bold">
+                                            @if (isset($obj->image))
+                                                Update Image
+                                            @else
+                                                Select Image
+                                            @endif
+                                        </label>
+                                        <input class="form-control border border-secondary px-2" type="file"
+                                            id="image" name="image">
+                                    </div>
                                 </div>
-                            </div> --}}
-                            <div class="col-lg-12 mb-4">
+                            </div>
+                            <div class="col-12 py-1">
                                 <div class="form-group">
                                     <label class="font-weight-bold">Content</label>
                                     <textarea class="form-control border border-2 p-2" rows="5" name="content" placeholder="Input your content">
-                                    @isset($obj->id){{ $obj->content }}@endisset
-                                    </textarea>
+@isset($obj->id)
+{{ $obj->content }}
+@endisset
+</textarea>
                                 </div>
                             </div>
                             <div class="row">

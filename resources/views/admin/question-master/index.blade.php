@@ -13,7 +13,7 @@
                                 <li class="nav-item d-flex align-items-center">
                                     <a class="btn btn-info text-capitalize text-md px-3 py-2"
                                         href="javascript:window.location.replace('{{ route('question-master.create') }}');">
-                                        <i class="fa fa-plus"></i> Tambah
+                                        <i class="fa fa-plus"></i> Create
                                     </a>
                                 </li>
                             </ul>
@@ -68,12 +68,12 @@
                                                     <td>{{ $question->createdBy->name }}</td>
                                                     <td>
                                                         <span>
-                                                            <a href="javascript:window.location.replace('{{ route('question-master.edit', $question) }}');"
+                                                            <a href="javascript:window.location.replace('{{ route('question-master.edit', $question->question_key) }}');"
                                                                 class="btn btn-success m-0 py-1 px-3"
                                                                 data-original-title="Edit Question">
                                                                 <i class="fa fa-pencil-square-o"></i> Edit
                                                             </a>
-                                                            <a href="javascript:confirmDelete({{ $question }});"
+                                                            <a href="javascript:confirmDelete('{{ $question->question_key }}', '{{ $question->question_english }}');"
                                                                 class="btn btn-danger m-0 py-1 px-3"
                                                                 data-original-title="Delete Question">
                                                                 <i class="fa fa-trash"></i> Delete
@@ -118,7 +118,7 @@
                 });
             @endisset
 
-            function confirmDelete(obj) {
+            function confirmDelete(key, name) {
                 var token = $("input[name='_token']").attr("value");
                 Swal.fire({
                     title: 'Delete selected question ?',
@@ -134,9 +134,9 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "DELETE",
-                            url: "{{ route('question-master.index') }}/" + obj.id,
+                            url: "{{ route('question-master.index') }}/" + key,
                             data: {
-                                "id": obj.id,
+                                "key": key,
                                 "_token": token,
                             },
                             dataType: "json",

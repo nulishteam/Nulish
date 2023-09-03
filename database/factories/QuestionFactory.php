@@ -21,6 +21,7 @@ class QuestionFactory extends Factory
             'question_indonesia' => null,
             'level_id' => random_int(4, 6),
             'type_id' => random_int(1, 4),
+            'question_key' => $this->faker->regexify('[A-Za-z0-9]{16}'),
             'created_by' => 1,
             'created_at' => now(),
         ];

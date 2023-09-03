@@ -7,6 +7,7 @@
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
+
                     <nav class="navbar navbar-expand-lg px-0 mx-0 py-0 my-0 shadow-none border-radius-xl bg-gray-200">
                         <div class="container-fluid mx-3">
                             <ul class="navbar-nav ms-auto">
@@ -20,10 +21,10 @@
                         </div>
                     </nav>
 
-                    <div class="card my-6">
+                    <div class="card my-3">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Home Items</h6>
+                                <h6 class="text-white text-capitalize ps-3">Home Item Master</h6>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -40,8 +41,8 @@
                                             <th
                                                 class="text-uppercase text-center text-secondary text-xs font-weight-bolder opacity-7 ps-2">
                                                 Image</th>
-                                            <th
-                                                class="text-uppercase text-center text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bolder opacity-7 ps-2"
+                                                style="min-width: 390px;">
                                                 Content</th>
                                             <th
                                                 class="text-uppercase text-center text-secondary text-xs font-weight-bolder opacity-7 ps-2">
@@ -64,8 +65,10 @@
                                                 <tr>
                                                     <td class="text-center">{{ $item->id }}</td>
                                                     <td class="text-center"> {!! $item->title !!}</td>
-                                                    <td class="text-center"> <img src="{{ Storage::url('public/img/').$item->image }}" class="rounded" style="width: 80px"> </td>
-                                                    <td class="text-center"> {!! $item->content !!}</td>
+                                                    <td class="text-center"> <img
+                                                            src="{{ route('img.retrieve', ['home_item', $item->image]) }}"
+                                                            class="rounded" style="width: 80px"> </td>
+                                                    <td class="text-center text-wrap"> {!! $item->content !!}</td>
                                                     <td class="text-center">
                                                         <div>
                                                             <a href="javascript:window.location.replace('{{ route('home-item-master.edit', $item) }}');"

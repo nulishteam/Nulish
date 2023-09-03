@@ -8,6 +8,7 @@ use App\Models\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Faker;
 
 class QuestionController extends Controller
 {
@@ -64,7 +65,12 @@ class QuestionController extends Controller
                 'question_english' => 'required',
             ]);
 
+            //lengkapi data yang kosong
+            if ($request->question_key == null) {
+                $request->merge(['question_key' => $this->keyGen()]);
+            }
             $request->merge(['created_by' => auth()->user()->id]);
+
             Question::updateOrCreate(
                 ['id' => $id],
                 $request->all(),
@@ -100,13 +106,13 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($key)
     {
-        if ($id == null) {
+        if ($key == null) {
             return abort(400);
         }
 
-        $obj = Question::find($id);
+        $obj = Question::where('question_key', $key)->firstOrFail();
         if ($obj == null) {
             return abort(404);
         }
@@ -134,12 +140,12 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($key)
     {
-        if ($id == null) {
+        if ($key == null) {
             return abort(400);
         }
-        $obj = Question::find($id);
+        $obj = Question::where('question_key', $key)->firstOrFail();
         $obj->delete();
         return response()->json([
             'message' => 'Selected question deleted successfully',
@@ -153,5 +159,15 @@ class QuestionController extends Controller
     private function getAllType()
     {
         return Type::all();
+    }
+
+    private function keyGen()
+    {
+        $faker = Faker\Factory::create();
+        $key = $faker->regexify('[A-Za-z0-9]{16}');
+        $cek = Question::where('question_key', $key)->get('question_key')->count();
+        if ($cek > 0)
+            $key = $this->keyGen();
+        return $key;
     }
 }

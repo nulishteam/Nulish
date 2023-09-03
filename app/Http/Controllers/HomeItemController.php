@@ -78,7 +78,19 @@ class HomeItemController extends Controller
         // }
 
         try {
+            //dd($request);
             $id = decrypt($request->id);
+            if ($id == null)
+                $request->validate([ //image harus ada ketika create. Jika edit, image tidak wajib karena ada kemungkinan sudah ada
+                    'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                ]);
+
+            $request->validate([
+                'title'     => 'required',
+                'content'   => 'required'
+            ]);
+
+            //logic test
             $cek = HomeItem::where('title', $request->title)->where('id', '!=', $id)->where('deleted_at', null)->get();
             if ($cek->count() > 0) {
                 throw new Exception('Home Item dengan title ' . $request->title . ' sudah ada');
@@ -89,35 +101,41 @@ class HomeItemController extends Controller
                 throw new Exception('Home Item dengan content sama sudah ada');
             }
 
-            $request->merge(['image' => 'no_image.jpg']);
-              //validate form
-           $this->validate($request, [
-            'title'     => 'required|min:5',
-            // 'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'content'   => 'required|min:10'
-        ]);
+            $obj = $request->all();
 
-        //upload image
-        // $image = $request->file('image');
-        // $image->storeAs('public/img', $image->hashName());
+            //save image data
+            if ($imageData = $request->file('image')) {
+                $dir = '/img/home_item/';
+                $fileName = $imageData->hashName();
+                if ($id > 0) {
+                    $oldImageName = HomeItem::find($id)->image;
+                    //dd($oldImageName);
+                    if ($oldImageName != "zXxZAXR8Fb9TJicdefault.jpg")
+                        Storage::disk('public')->delete($dir . $oldImageName);
+                }
+                $imageData->storeAs($dir, $fileName, 'public');
+                $obj['image'] = $fileName;
+                //dd($fileName);
+            } else {
+                unset($request['image']);
+            }
 
-        //create post
-        HomeItem::updateOrCreate([
-            ['id' => $id],
-            $request->all(),
-        ]);
+            //create post
+            HomeItem::updateOrCreate(
+                ['id' => $id],
+                $obj,
+            );
 
             $msg = 'Saved successfully';
             $rspMsg = (object) ['title' => 'Success', 'message' => $msg, 'status' => 'success'];
             return $this->index($rspMsg);
         } catch (Exception $ex) {
-                $obj = (object) $request->all();
-                $obj->id = $id == null ? 0 : $id;
-                $rspMsg = (object) ['title' => 'Error', 'message' => $ex->getMessage(), 'status' => 'error'];
-                return view('admin.home-item-master.edit', compact('obj', 'rspMsg'));
-
+            $obj = (object) $request->all();
+            $obj->id = $id == null ? 0 : $id;
+            $obj->image = null;
+            $rspMsg = (object) ['title' => 'Error', 'message' => $ex->getMessage(), 'status' => 'error'];
+            return view('admin.home-item-master.edit', compact('obj', 'rspMsg'));
         }
-
     }
 
     /**
@@ -149,7 +167,6 @@ class HomeItemController extends Controller
         }
         // dd($obj);
         return view('admin.home-item-master.edit', compact('obj'));
-
     }
 
     /**
@@ -161,7 +178,7 @@ class HomeItemController extends Controller
      */
     public function update(Request $request, HomeItem $homeItem)
     {
-       //
+        //
     }
 
     /**
@@ -172,26 +189,25 @@ class HomeItemController extends Controller
      */
     public function destroy($id)
     {
-        try{
+        try {
             $obj = HomeItem::find($id);
-            if($obj == null){
+            if ($obj == null) {
                 throw new Exception("Item not found. Fail deleting data");
             }
-            Storage::disk('local')->delete('public/img/'.$obj->image);
+            //Storage::disk('local')->delete('public/img/' . $obj->image); //image tidak dihapus agar bisa di-restore..
             $obj->delete();
 
             return response()->json([
                 'title' => 'Success',
-                'message' => 'Selected question deleted successfully',
+                'message' => 'Selected item deleted successfully',
                 'status' => 'success',
             ]);
-        } catch(Exception $ex){
+        } catch (Exception $ex) {
             return response()->json([
                 'title' => 'Error',
                 'message' => $ex->getMessage(),
                 'status' => 'error',
             ]);
         }
-
     }
 }
