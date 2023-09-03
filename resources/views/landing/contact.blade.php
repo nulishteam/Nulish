@@ -1,6 +1,6 @@
 <x-template.landing bodyClass="contact-us">
 
-    <x-navbars.navs.landingnav titlePage=''></x-navbars.navs.landingnav>
+    <x-navbars.navs.landingnav titlePage='Contact'></x-navbars.navs.landingnav>
 
     <section>
         <div class="page-header min-vh-100">
@@ -8,7 +8,7 @@
                 <div class="row">
                     <div
                         class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-                        <div class="position-relative h-100  z-index-2 mt-4 px-7 ms-2 md-4 border-radius-lg d-flex flex-column justify-content-center"
+                        <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
                             style="background-image: url('../assets/img/illustrations/tim-nulish.jpg'); background-size: cover;"
                             loading="lazy"></div>
                     </div>
@@ -20,24 +20,57 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <p>For questions or cooperation or others, please contact us via the contact below:</p>
-                                  <ul class="list-unstyled mb-0">
-                                    <li>
-                                      <a href="mailto:nulishofficial@gmail.com" class="text-dark">
-                                        <i class="fas fa-envelope mr-2"></i> Email: nulishofficial@gmail.com
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a href="https://wa.me/62811250280" class="text-dark">
-                                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp: +62 811-250-280
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a href="tel:62811250280" class="text-dark">
-                                        <i class="fas fa-phone mr-2"></i> Phone: +62 811-250-280
-                                      </a>
-                                    </li>
-                                  </ul>
+                                <p class="pb-3">
+                                    For further questions, including partnership opportunities, please email
+                                    <a href="mailto:nulishofficial@gmail.com">nulishofficial@gmail.com</a>
+                                    or contact using our contact form.
+                                </p>
+                                <form id="contact-form" method="post" autocomplete="off">
+                                    <div class="card-body p-0 my-3">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Full Name</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Your Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ps-md-2">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control"
+                                                        placeholder="youremail@email.com">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Phone</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Phone">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ps-md-2">
+                                                <div class="input-group input-group-static mb-4">
+                                                    <label>Subject</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Subject">
+                                                </div>
+                                            </div>
+                                        <div class="form-group mb-0 mt-md-0 mt-4">
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>Message</label>
+                                                <textarea name="message" class="form-control" id="message" rows="6"
+                                                    placeholder="Describe your problem in at least 250 characters"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <button type="submit" class="btn bg-gradient-primary mt-3 mb-0">Send
+                                                    Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
