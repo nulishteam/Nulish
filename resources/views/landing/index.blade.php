@@ -29,69 +29,63 @@
     <div class="card card-body bg-white shadow-xl mx-3 mx-md-4 mt-n4">
         <!-- Section with four info areas left & one card right with image and waves -->
         <section class="pb-5 position-relative mx-n3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 d-sm-none d-lg-block"></div>
-                    <div class="col-lg-8 col-sm-12">
-                        <div class="card card-profile mt-4 bg-secondary">
-                            <div class="row flex-row-reverse">
-                                <div class="col-lg-4 col-md-6 col-12 my-auto">
-                                    <a href="javascript:;">
-                                        <div class="p-4 pe-md-4">
-                                            <img class="w-100 border-radius-md shadow-lg"
-                                                src="{{ asset('assets/img/card/card1.jpg') }}" alt="image">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-8 my-auto">
-                                    <div class="card-body ps-lg-4">
-                                        <h6 class="text-dark text-center">Why We Create Nulish?</h6>
-                                        <p class="mb-0 text-light">The important reason for the need to learn English
-                                            from an early age is so that it will be easier for students to continue
-                                            their schooling to the next stage because they are not surprised by the
-                                            compulsory English subject at that stage. The ability to absorb foreign
-                                            languages ​​will be more easily accepted by elementary level students.
-                                            And in a global era where most modern systems use English as an
-                                            international language, mastering English from an early age will make it
-                                            easier for students to accept technology well.
-                                        <p>
-
+            @foreach ( $landing as $obj)
+            <div class="d-flex align-items-end flex-column mb-3 mx-2">
+                <div class="col-md-2 d-sm-none d-lg-block"></div>
+                <div class="col-lg-9 col-md-8 col-sm-12 mx-7">
+                    <div class="card card-profile mt-4 bg-secondary">
+                        <div class="row flex-row-reverse">
+                            <div class="col-lg-4 col-md-6 col-12 my-auto">
+                                <a href="javascript:;">
+                                    <div class="p-4 pe-md-4">
+                                        <img class="w-100 border-radius-md shadow-lg"
+                                            src="{{route('img.retrieve', ['home_item', $obj->image]) }}" alt="image">
                                     </div>
-                                </div>
-
+                                </a>
                             </div>
+                            <div class="col-lg-8 my-auto">
+                                <div class="card-body ps-lg-4">
+                                    <h6 class="text-dark text-center">{{ $obj->title }}</h6>
+                                    <p class="mb-0 text-light">
+                                        {!! strip_tags($obj->content)!!}
+                                    <p>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-2 d-sm-none d-lg-block"></div>
-                    <div class="col-lg-8 col-sm-12">
-                        <div class="card card-profile mt-4 bg-secondary">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 col-12 my-auto">
-                                    <a href="javascript:;">
-                                        <div class="p-4 pe-md-4">
-                                            <img class="w-100 border-radius-md shadow-lg"
-                                                src="{{ asset('assets/img/card/card2.jpg') }}" alt="image">
-                                        </div>
-                                    </a>
+            </div>
+        <div class="d-flex align-items-start flex-column mb-3 mx-2">
+            <div class="col-md-2 d-sm-none d-lg-block"></div>
+            <div class="col-lg-9 col-md-8 col-sm-12 mx-7">
+                <div class="card card-profile mt-4 bg-secondary">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12 my-auto">
+                            <a href="javascript:;">
+                                <div class="p-4 pe-md-4">
+                                    <img class="w-100 border-radius-md shadow-lg"
+                                        src="{{route('img.retrieve', ['home_item', $obj->image]) }}" alt="image">
                                 </div>
-                                <div class="col-lg-8 col-md-6 col-12 my-auto">
-                                    <div class="card-body ps-lg-0">
-                                        <h6 class="text-dark text-center">Why do you need to join Nulish?</h6>
-                                        <p class="mb-0 text-light">Nulish was created with the aim of proposing an
-                                            ecosystem and product prototype
-                                            as a solution to help improve students' and society's English language
-                                            skills
-                                            Indonesia in general. So for those of you who want to deepen your
-                                            communication in English, come join now.</p>
-                                    </div>
-                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-12 my-auto">
+                            <div class="card-body ps-lg-0">
+                                <h6 class="text-dark text-center">{{$obj->title}}</h6>
+                                <p class="mb-0 text-light">
+                                    {!! strip_tags($obj->content)!!}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+
+
+@endforeach
         </section>
         <!-- END Section with four info areas left & one card right with image and waves -->
 

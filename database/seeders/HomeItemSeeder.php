@@ -16,7 +16,7 @@ class HomeItemSeeder extends Seeder
     public function run()
     {
         HomeItem::factory()
-            ->count(4)
+            ->count(2)
             ->create();
     }
 }

@@ -32,6 +32,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingController;
 
 // Route::get('/', function () {return  view('landing.index');})->name('index');
 // Route::get('/index', function () {return  redirect()->route('index');});
@@ -41,9 +42,7 @@ use App\Http\Controllers\DashboardController;
 // Route::get('/contact', function () {return view('landing.contact');})->name('contact');
 
 Route::prefix('')->group(function () {
-    Route::get('', function () {
-        return view('landing.index');
-    })->name('index');
+    Route::get('', [LandingController::class, 'index'])->name('index');
 
     Route::get('index', function () {
         return  redirect()->route('index');

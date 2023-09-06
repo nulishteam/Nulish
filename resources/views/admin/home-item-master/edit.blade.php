@@ -65,10 +65,8 @@
                                 <div class="form-group">
                                     <label class="font-weight-bold">Content</label>
                                     <textarea class="form-control border border-2 p-2" rows="5" name="content" placeholder="Input your content">
-@isset($obj->id)
-{{ $obj->content }}
-@endisset
-</textarea>
+                                    @isset($obj->id){{ $obj->content }}@endisset
+                                    </textarea>
                                 </div>
                             </div>
                             <div class="row">
