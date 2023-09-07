@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\HomeItem;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class HomeItemSeeder extends Seeder
@@ -16,7 +15,7 @@ class HomeItemSeeder extends Seeder
     public function run()
     {
         HomeItem::factory()
-            ->count(2)
+            ->count(4)
             ->create();
     }
 }

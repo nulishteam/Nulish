@@ -1,23 +1,28 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Models\Contact;
 
-class ContactController extends Controller {
+use App\Models\Contact;
+use Illuminate\Http\Request;
+
+class ContactController extends Controller
+{
     // Create Contact Form
-    public function createForm(Request $request) {
-      return view('contact');
+    public function createForm(Request $request)
+    {
+        return view('contact');
     }
     // Store Contact Form data
-    public function ContactForm(Request $request) {
+    public function ContactForm(Request $request)
+    {
         // Form validation
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'subject'=>'required',
-            'message' => 'required'
-         ]);
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+        dd($request);
         //  Store data in database
         Contact::create($request->all());
         //

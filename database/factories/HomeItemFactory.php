@@ -19,8 +19,9 @@ class HomeItemFactory extends Factory
         return [
             'title' => $this->faker->sentence(3, false),
             'content' => $this->faker->sentence(20, false),
-            'image' => 'zXxZAXR8Fb9TJicdefault.jpg',
+            'image' => 'zXxZAXR8defaultFb9TJic3.jpg',
             'created_at' => now(),
+            'sequence' => null,
         ];
     }
 }

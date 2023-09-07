@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Type;
+use App\Http\Controllers\Controller;
 use App\Models\Level;
 use App\Models\Question;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\Type;
 use Exception;
-use Faker;
+use Faker\Factory;
+use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
@@ -18,7 +18,6 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($rspMsg = null, $filter = null)
-
     {
         //$questions = Question::all()->loadMissing('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->sortBy([['level_id', 'asc'], ['updated_at', 'desc']]);
         $questions = Question::with('level:id,level_name', 'type:id,type_name', 'createdBy:id,name')->orderBy('level_id')->orderBy('type_id')->orderBy('question_english')->paginate(20);
@@ -76,7 +75,12 @@ class QuestionController extends Controller
                 $request->all(),
             );
 
-            $msg = 'Saved successfully';
+            $status = "Created";
+            if ($id > 0) {
+                $status = "Updated";
+            }
+
+            $msg = $status . ' successfully';
             $rspMsg = (object) ['title' => 'Success', 'message' => $msg, 'status' => 'success'];
             return $this->index($rspMsg);
         } catch (Exception $ex) {
@@ -163,11 +167,13 @@ class QuestionController extends Controller
 
     private function keyGen()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
         $key = $faker->regexify('[A-Za-z0-9]{16}');
         $cek = Question::where('question_key', $key)->get('question_key')->count();
-        if ($cek > 0)
+        if ($cek > 0) {
             $key = $this->keyGen();
+        }
+
         return $key;
     }
 }

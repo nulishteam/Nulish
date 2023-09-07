@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('image');
+            $table->integer('sequence')->nullable();
             // $table->enum('post_as', ['Header', 'Seedbar'])->nullable();
             $table->timestamps();
             $table->softDeletes();
