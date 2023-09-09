@@ -33,22 +33,22 @@
                 @if ($obj->sequence % 2 == 0)
                     <div class="d-flex align-items-end flex-column mb-3 mx-2">
                         <div class="col-md-2 d-sm-none d-lg-block"></div>
-                        <div class="col-lg-9 col-md-8 col-sm-12 mx-7">
+                        <div class="col-lg-9 col-md-8 col-sm-8 mx-6">
                             <div class="card card-profile mt-4 bg-secondary">
                                 <div class="row flex-row-reverse">
                                     <div class="col-lg-4 col-md-6 col-12 my-auto">
                                         <a href="javascript:;">
-                                            <div class="p-4 pe-md-4">
+                                            <div class="p-3 pe-md-3">
                                                 <img class="w-100 border-radius-md shadow-lg"
                                                     src="{{ route('img.retrieve', ['home_item', $obj->image]) }}"
                                                     alt="image">
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-lg-8 my-auto">
+                                    <div class="col-lg-8 col-md-6 col-12 my-auto">
                                         <div class="card-body ps-lg-4">
                                             <h6 class="text-dark text-center">{{ $obj->title }}</h6>
-                                            <p class="mb-0 text-light">
+                                            <p class="mb-0 text-light ">
                                                 {!! strip_tags($obj->content) !!}
                                             <p>
 
@@ -62,12 +62,12 @@
                 @else
                     <div class="d-flex align-items-start flex-column mb-3 mx-2">
                         <div class="col-md-2 d-sm-none d-lg-block"></div>
-                        <div class="col-lg-9 col-md-8 col-sm-12 mx-7">
+                        <div class="col-lg-9 col-md-8 col-sm-8 mx-6">
                             <div class="card card-profile mt-4 bg-secondary">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 my-auto">
                                         <a href="javascript:;">
-                                            <div class="p-4 pe-md-4">
+                                            <div class="p-3 pe-md-3">
                                                 <img class="w-100 border-radius-md shadow-lg"
                                                     src="{{ route('img.retrieve', ['home_item', $obj->image]) }}"
                                                     alt="image">
