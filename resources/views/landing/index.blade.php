@@ -33,7 +33,7 @@
                 @if ($obj->sequence % 2 == 0)
                     <div class="d-flex align-items-end flex-column mb-3 mx-2">
                         <div class="col-md-2 d-sm-none d-lg-block"></div>
-                        <div class="col-lg-9 col-md-8 col-sm-8 mx-7">
+                        <div class="col-lg-9 col-md-8 col-sm-12 mx-7">
                             <div class="card card-profile mt-4 bg-secondary">
                                 <div class="row flex-row-reverse">
                                     <div class="col-lg-4 col-md-6 col-12 my-auto">
@@ -45,8 +45,8 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-lg-8 col-md-6 col-12 my-auto">
-                                        <div class="card-body ps-lg-5">
+                                    <div class="col-lg-8 my-auto">
+                                        <div class="card-body ps-lg-4">
                                             <h6 class="text-dark text-center">{{ $obj->title }}</h6>
                                             <p class="mb-0 text-light">
                                                 {!! strip_tags($obj->content) !!}
@@ -62,7 +62,7 @@
                 @else
                     <div class="d-flex align-items-start flex-column mb-3 mx-2">
                         <div class="col-md-2 d-sm-none d-lg-block"></div>
-                        <div class="col-lg-9 col-md-8 col-sm-8 mx-7">
+                        <div class="col-lg-9 col-md-8 col-sm-12 mx-7">
                             <div class="card card-profile mt-4 bg-secondary">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 my-auto">
@@ -120,10 +120,10 @@
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <div class="card card-plain">
-                            <div class="card-header p-0 position-relative py-4">
+                            <div class="card-header p-0 position-relative mx-6">
                                 <a class="d-block blur-shadow-image">
                                     <img src="../assets/img/examples/promosi1.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow rounded mx-auto d-block border-radius-lg" loading="lazy">
+                                        class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body px-0">
