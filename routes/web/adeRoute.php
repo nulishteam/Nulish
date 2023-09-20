@@ -21,5 +21,5 @@ Contoh Route:
 Route::resource('coba', CobaController::class)->except(['update', 'show']);
 */
 
-Route::get('landing.contact', [\App\Http\Controllers\ContactController::class, 'createForm'])->name('contact');
-Route::post('landing.contact', [\App\Http\Controllers\ContactController::class, 'ContactForm'])->name('contact.store');
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'createForm']);
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'ContactForm'])->name('contact.store');
