@@ -49,6 +49,9 @@ class RouteServiceProvider extends ServiceProvider
                     function ($router) {
                         require base_path('routes/web.php');
                         require base_path('routes/web/faizRoute.php');
+                        require base_path('routes/web/adeRoute.php');
+                        require base_path('routes/web/rivoRoute.php');
+                        require base_path('routes/web/lutfieRoute.php');
                     }
                 );
         });

@@ -56,9 +56,9 @@ Route::prefix('')->group(function () {
         return view('landing.author');
     })->name('author');
 
-    Route::get('contact', function () {
-        return view('landing.contact');
-    })->name('contact');
+//    Route::get('contact', function () {
+//        return view('landing.contact');
+//    })->name('contact');
 });
 
 Route::prefix('admin')->middleware('auth')->group(function () {
