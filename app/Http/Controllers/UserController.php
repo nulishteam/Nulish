@@ -121,27 +121,37 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-try {
-            $obj = User::find($id);
-            if ($obj == null) {
-                throw new Exception("Item not found. Fail deleting data");
-            }
-            //Storage::disk('local')->delete('public/img/' . $obj->image); //image tidak dihapus agar bisa di-restore..
+// try {
+//             $obj = User::find($id);
+//             if ($obj == null) {
+//                 throw new Exception("Item not found. Fail deleting data");
+//             }
+//             //Storage::disk('local')->delete('public/img/' . $obj->image); //image tidak dihapus agar bisa di-restore..
 
-            $obj->delete();
-            dd($obj);
+//             $obj->delete();
+//             dd($obj);
 
-            return response()->json([
-                'title' => 'Success',
-                'message' => 'Selected item deleted successfully',
-                'status' => 'success',
-            ]);
-        } catch (Exception $ex) {
-            return response()->json([
-                'title' => 'Error',
-                'message' => $ex->getMessage(),
-                'status' => 'error',
-            ]);
+//             return response()->json([
+//                 'title' => 'Success',
+//                 'message' => 'Selected item deleted successfully',
+//                 'status' => 'success',
+//             ]);
+//         } catch (Exception $ex) {
+//             return response()->json([
+//                 'title' => 'Error',
+//                 'message' => $ex->getMessage(),
+//                 'status' => 'error',
+//             ]);
+//         }
+        if ($id == null) {
+            return abort(400);
         }
+        $obj = User::find($id);
+        $obj->delete();
+        return response()->json([
+            'message' => '<strong>' . $obj->name . '</strong> deleted successfully',
+        ]);
+
+
     }
 }

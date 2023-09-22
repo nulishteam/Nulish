@@ -38,7 +38,7 @@
                                     <input type="text" class="form-control border border-2 p-2" id="txtName"
                                         name="name"
                                         value="@isset($obj->id) {{ $obj->name }} @endisset">
-                                    <small id="emailHelp" class="form-text text-muted">Buat nama Kamu</small>
+                                    <small id="nameHelp" class="form-text text-muted">Buat nama Kamu</small>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                     <label for="txtEmail" class="form-label">Email</label>
                                     <input type="text" class="form-control border border-2 p-2" id="txtEmail"
                                         name="email"
-                                        value="@isset($obj->id) {{ $obj->name }} @endisset">
+                                        value="@isset($obj->id) {{ $obj->email }} @endisset">
                                     <small id="emailHelp" class="form-text text-muted">Masukkan email aktif Kamu</small>
                                 </div>
                             </div>
@@ -60,9 +60,10 @@
                                 <div class="form-group">
                                     <label for="txtImage" class="form-label">Gambar Profil</label>
                                     <input type="text" class="form-control border border-2 p-2" id="txtImage"
-                                        name="email"
-                                        value="@isset($obj->id) {{ $obj->name }} @endisset">
-                                    <small id="emailHelp" class="form-text text-muted">Upload Gambar Profil Kamu</small>
+                                        name="user_image"
+                                        value="@isset($obj->id) {{ $obj->user_image }} @endisset">
+                                    <small id="userImageHelp" class="form-text text-muted">Upload Gambar Profil
+                                        Kamu</small>
                                 </div>
                             </div>
                         </div>
@@ -73,8 +74,8 @@
                                     <label for="txtPassword" class="form-label">Password</label>
                                     <input type="password" class="form-control border border-2 p-2" id="txtPassword"
                                         name="password"
-                                        value="@isset($obj->id) {{ $obj->name }} @endisset">
-                                    <small id="emailHelp" class="form-text text-muted">Buat password Kamu</small>
+                                        value="@isset($obj->id) {{ $obj->password }} @endisset">
+                                    <small id="passwordlHelp" class="form-text text-muted">Buat password Kamu</small>
                                 </div>
                             </div>
                         </div>
