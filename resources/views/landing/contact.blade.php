@@ -25,34 +25,39 @@
                                     <a href="mailto:nulishofficial@gmail.com">nulishofficial@gmail.com</a>
                                     or contact using our contact form.
                                 </p>
+<<<<<<< Updated upstream
                                 <form id="contact-form" method="get" autocomplete="off">
+=======
+                                <form id="contact-form" method="post" autocomplete="off" action="{{ route('contact.store') }}">
+                                    @csrf
+>>>>>>> Stashed changes
                                     <div class="card-body p-0 my-3">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="input-group input-group-static mb-4">
                                                     <label>Full Name</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Your Name">
+                                                        placeholder="Your Name" name="name">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ps-md-2">
                                                 <div class="input-group input-group-static mb-4">
                                                     <label>Email</label>
                                                     <input type="email" class="form-control"
-                                                        placeholder="youremail@email.com">
+                                                        placeholder="youremail@email.com" name="email">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-group input-group-static mb-4">
                                                     <label>Phone</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Phone">
+                                                        placeholder="Phone" name="phone">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ps-md-2">
                                                 <div class="input-group input-group-static mb-4">
                                                     <label>Subject</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" class="form-control" name="subject"
                                                         placeholder="Subject">
                                                 </div>
                                             </div>
