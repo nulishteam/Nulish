@@ -28,7 +28,9 @@ class User extends Authenticatable
         'phone',
         'about',
         'password_confirmation',
-        'user_image'
+        'user_image',
+        'user_key',
+        'level_id',
     ];
 
     /**
@@ -55,4 +57,8 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    public function level()
+    {
+        return $this->belongsTo(Level::class);;
+    }
 }

@@ -34,6 +34,12 @@ class LevelSeeder extends Seeder
         ]);
 
         DB::table('levels')->insert([
+            'level_name' => 'Guru',
+            'level_weight' => 10,
+            'created_at' => now(),
+        ]);
+
+        DB::table('levels')->insert([
             'level_name' => 'Level 1',
             'level_weight' => 1,
             'created_at' => now(),
@@ -48,12 +54,6 @@ class LevelSeeder extends Seeder
         DB::table('levels')->insert([
             'level_name' => 'Level 3',
             'level_weight' => 3,
-            'created_at' => now(),
-        ]);
-
-        DB::table('levels')->insert([
-            'level_name' => 'Guru',
-            'level_weight' => 10,
             'created_at' => now(),
         ]);
     }

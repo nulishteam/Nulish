@@ -25,7 +25,7 @@
                     </ul>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user-master.store') }}">
+                    <form method="POST" action="{{ route('user-master.store') }}" enctype="multipart/form-data">
                         {{-- ini yg penting utk mengarahkan setelah action dilakukan --}}
                         @csrf
                         {{-- csrf ini menghasilkan token utk keamanan akses, data yg dikirim dari depan itu adalah berasal dari website internal --}}
@@ -41,9 +41,6 @@
                                     <small id="nameHelp" class="form-text text-muted">Buat nama Kamu</small>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row py-2">
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label for="txtEmail" class="form-label">Email</label>
@@ -53,29 +50,69 @@
                                     <small id="emailHelp" class="form-text text-muted">Masukkan email aktif Kamu</small>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row py-2">
-                            <div class="col-12 col-md-6 col-lg-4">
+                            <div class="col-12 col-md-6 col-lg-4 py-1">
                                 <div class="form-group">
-                                    <label for="txtImage" class="form-label">Gambar Profil</label>
-                                    <input type="text" class="form-control border border-2 p-2" id="txtImage"
-                                        name="user_image"
-                                        value="@isset($obj->id) {{ $obj->user_image }} @endisset">
-                                    <small id="userImageHelp" class="form-text text-muted">Upload Gambar Profil
-                                        Kamu</small>
+                                    <label for="cboLevel" class="form-label">Level</label>
+                                    <select class="form-select border-secondary" id="cboLevel" name="level_id">
+                                        <option value="" disabled="true" selected>Select Level</option>
+                                        @foreach ($levels as $level)
+                                            <option value="{{ $level->id }}">
+                                                {{ $level->level_name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <small id="questionLevelHelp" class="form-text text-muted">Select level</small>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row py-2">
+                            <div class="col-12 py-1">
+                                @isset($obj->user_image)
+                                    <div class="col-12 col-lg-6 py-1">
+                                        <img src="{{ route('img.retrieve', ['user_image', $obj->user_image]) }}"
+                                            class="img-fluid">
+                                    </div>
+                                @endisset
+                                <div class="col-12 col-lg-6 py-1">
+                                    <div class="form-group">
+                                        <label for="image" class="font-weight-bold">
+                                            @if (isset($obj->user_image))
+                                                Update Image
+                                            @else
+                                                Select Image
+                                            @endif
+                                        </label>
+                                        <input class="form-control border border-secondary px-2" type="file"
+                                            id="userImage" name="user_image">
+                                        <small id="userImageHelp" class="form-text text-muted">Upload Gambar Profil
+                                            Kamu</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row py-2">
+                            <h6>
+                                @if (@isset($obj->id))
+                                    Update Password
+                                @else
+                                    Set Password
+                                @endif
+                            </h6>
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label for="txtPassword" class="form-label">Password</label>
                                     <input type="password" class="form-control border border-2 p-2" id="txtPassword"
-                                        name="password"
-                                        value="@isset($obj->id) {{ $obj->password }} @endisset">
+                                        name="password">
                                     <small id="passwordlHelp" class="form-text text-muted">Buat password Kamu</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="txtPassword" class="form-label">Retype Password</label>
+                                    <input type="password" class="form-control border border-2 p-2" id="txtPassword"
+                                        name="passwordRetype">
+                                    <small id="passwordlHelp" class="form-text text-muted"></small>
                                 </div>
                             </div>
                         </div>
@@ -107,6 +144,13 @@
                 });
             @endisset
 
+            var level_id = null;
+            @isset($obj->level_id)
+                level_id = {{ $obj->level_id }};
+            @endisset
+
+            setSelectValue($('#cboLevel'), level_id);
+
             function cancelEdit(homeUrl) {
                 Swal.fire({
                     title: 'Close page?',
@@ -123,6 +167,10 @@
                         window.location.replace(homeUrl);
                     }
                 });
+            }
+
+            function setSelectValue(instance, value) {
+                instance.val(value).change();
             }
         </script>
     @endpush

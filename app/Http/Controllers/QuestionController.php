@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Level;
-use App\Models\Question;
-use App\Models\Type;
 use Exception;
 use Faker\Factory;
+use App\Models\Type;
+use App\Models\Level;
+use App\Models\Question;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class QuestionController extends Controller
 {
@@ -65,7 +66,7 @@ class QuestionController extends Controller
             ]);
 
             //lengkapi data yang kosong
-            if ($request->question_key == null) {
+            if ($id == null) {
                 $request->merge(['question_key' => $this->keyGen()]);
             }
             $request->merge(['created_by' => auth()->user()->id]);
@@ -167,8 +168,8 @@ class QuestionController extends Controller
 
     private function keyGen()
     {
-        $faker = Factory::create();
-        $key = $faker->regexify('[A-Za-z0-9]{16}');
+        // $faker = Factory::create();
+        $key = Str::random(16);
         $cek = Question::where('question_key', $key)->get('question_key')->count();
         if ($cek > 0) {
             $key = $this->keyGen();

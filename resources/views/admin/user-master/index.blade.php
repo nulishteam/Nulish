@@ -43,6 +43,9 @@
                                                 Email</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                                                Level</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
                                                 Image</th>
                                             <th class="text-secondary text-xs opacity-7"></th>
 
@@ -65,7 +68,10 @@
                                                     <td>{{ $user->id }}</td>
                                                     <td>{{ $user->name }}</td>
                                                     <td>{{ $user->email }}</td>
-                                                    <td>{{ $user->user_image }}</td>
+                                                    <td>{{ $user->level->level_name }}</td>
+                                                    <td class="text-center"> <img
+                                                            src="{{ route('img.retrieve', ['user_image', $user->user_image]) }}"
+                                                            class="rounded" style="width: 80px"> </td>
                                                     <td>
                                                         <span>
                                                             <a href="javascript:window.location.replace('{{ route('user-master.edit', $user) }}');"

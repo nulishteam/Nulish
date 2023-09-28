@@ -20,4 +20,4 @@ use App\Http\Controllers\ImageController;
 // Route coba hanya untuk percobaan.
 Route::resource('faizCoba', FaizCobaController::class)->except(['update', 'show']);
 
-Route::get('/assets/private/img/{dir}/encrypt/{filename}/dir/protect/image', [ImageController::class, 'urlGen'])->name('img.retrieve');
+Route::get('/assets/private/img/encrypt/dir/protect/image/{dir?}/{filename?}', [ImageController::class, 'urlGen'])->name('img.retrieve');
