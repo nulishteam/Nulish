@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12 ">
                         <div class="card card-plain">
                             <div class="card-header p-0 position-relative py-4">
                                 <a class="d-block blur-shadow-image ">
@@ -118,12 +118,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card card-plain">
-                            <div class="card-header p-0 position-relative mx-6">
+                            <div class="card-header p-0 position-relative py-4">
                                 <a class="d-block blur-shadow-image">
                                     <img src="../assets/img/examples/promosi1.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow border-radius-lg" loading="lazy">
+                                        class="img-fluid shadow runded mx-auto d-block  border-radius-lg" loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body px-0">
@@ -136,7 +136,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card card-plain">
                             <div class="card-header p-0 position-relative py-4">
                                 <a class="d-block blur-shadow-image">

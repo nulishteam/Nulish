@@ -2,12 +2,11 @@
     <x-navbars.sidebar activePage="home-item-master"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="HomeItem Master"></x-navbars.navs.auth>
+
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
-                <div class="col-12">
-
+                <div class="col-12 ">
                     <nav class="navbar navbar-expand-lg px-0 mx-0 py-0 my-0 shadow-none border-radius-xl bg-gray-200">
                         <div class="container-fluid mx-3">
                             <ul class="navbar-nav ms-auto">

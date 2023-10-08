@@ -13,7 +13,7 @@
                     <div class=" navbar-brand px-0 font-weight-bolder ms-sm-2">
 
                         <a href=" {{ route('home') }} ">
-                            <img src="{{ asset('assets/img/logos/logo3.png') }}" width="70px" alt="">
+                            <img src="{{ asset('assets/img/logos/logos.png') }}" width="80px" alt="">
                         </a>
                         @if ($titlePage)
                             / {{ $titlePage }}

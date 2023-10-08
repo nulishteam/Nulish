@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PracticeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -19,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 Contoh Route:
 Route::resource('coba', CobaController::class)->except(['update', 'show']);
 */
+Route::prefix('user-area')->middleware('auth')->group(function () {
+    Route::get('practice', [PracticeController::class, 'index'])->name('practice');
+});
