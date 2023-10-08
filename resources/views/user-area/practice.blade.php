@@ -22,48 +22,42 @@
                     </div>
                     <div class="card-body p-3">
                         @if (session('status'))
-                        <div class="row">
-                            <div class="alert alert-success alert-dismissible text-white" role="alert">
-                                <span class="text-sm">{{ Session::get('status') }}</span>
-                                <button type="button" class="btn-close text-lg py-3 opacity-10"
-                                    data-bs-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                            <div class="row">
+                                <div class="alert alert-success alert-dismissible text-white" role="alert">
+                                    <span class="text-sm">{{ Session::get('status') }}</span>
+                                    <button type="button" class="btn-close text-lg py-3 opacity-10"
+                                        data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
                         @endif
                         @if (Session::has('demo'))
-                                <div class="row">
-                                    <div class="alert alert-danger alert-dismissible text-white" role="alert">
-                                        <span class="text-sm">{{ Session::get('demo') }}</span>
-                                        <button type="button" class="btn-close text-lg py-3 opacity-10"
-                                            data-bs-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
+                            <div class="row">
+                                <div class="alert alert-danger alert-dismissible text-white" role="alert">
+                                    <span class="text-sm">{{ Session::get('demo') }}</span>
+                                    <button type="button" class="btn-close text-lg py-3 opacity-10"
+                                        data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
+                            </div>
                         @endif
-                        <form method='POST' action='{{ route('user-profile') }}'>
+                        <form method='POST' action='{{ route('answer.store') }}'>
                             @csrf
                             <div class="row">
+                                <div class="mb-1 col-md-6">
 
-
-
-                                <div class="mb-3 col-md-6">
-
-                                    <p class="mb-2 text-dark">
-                                        Pertanyaan...?
-                                    </p>
+                                    <span class="text-dark">
+                                        {{ $question->question_english }}
+                                    </span>
+                                    <input type="hidden" name="q_key" value="{{ $question->question_key }}" />
                                 </div>
 
                                 <div class="mb-3 col-md-12">
                                     <label for="floatingTextarea2">About</label>
-                                    <textarea class="form-control border border-2 p-2"
-                                        placeholder=" Say something about yourself" id="floatingTextarea2" name="about"
-                                        rows="4" cols="50">{{ old('about', auth()->user()->about) }}</textarea>
-                                        @error('about')
-                                        <p class='text-danger inputerror'>{{ $message }} </p>
-                                        @enderror
+                                    <textarea class="form-control border border-2 p-2" placeholder="Type your answer Here" id="floatingTextarea2"
+                                        name="answer_text" rows="4" cols="50"></textarea>
                                 </div>
                             </div>
                             <button type="submit" class="btn bg-gradient-dark">Submit</button>
