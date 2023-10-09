@@ -224,18 +224,18 @@
                                             <p class="d-inline-flex gap-6">
                                                 <a class="btn btn-link text-info" data-bs-toggle="collapse"
                                                     href="#" role="button" aria-expanded="false"
-                                                    aria-controls="collapseUser1">
+                                                    aria-controls="collapseUser2">
                                                     <i class="bi bi-heart mx-auto"><span class="mx-1">Like</i>
                                                 </a>
                                                 <button class="btn btn-link text-info" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseUser1"
-                                                    aria-expanded="false" aria-controls="collapsefeed1">
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseUser2"
+                                                    aria-expanded="false" aria-controls="collapsefeed2">
                                                     <i class="bi bi-chat-dots mx-auto"><span
                                                             class="mx-1">Feedback</span></i>
                                                 </button>
                                             </p>
 
-                                            <div class="collapse" id="collapseUser1">
+                                            <div class="collapse" id="collapseUser2">
                                                 <div class="card card-body">
                                                     <ul class="ps-2">
 
