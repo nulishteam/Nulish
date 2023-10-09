@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-10 col-md-6 col-12 mx-auto">
+                                <div class="col-lg-12 ps-5">
                                     <div class="card-body ps-lg-0 mt-1 rounded-pill">
 
                                         <div class="card-body">
@@ -77,7 +77,9 @@
                                                     <p class="small mb-0">What are you doing tomorrow? </p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex flex-row justify-content-end mb-2 pt-1">
+                                            <div class="d-flex flex-row-reverse justify-content-start pt-1">
+                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                                                    alt="avatar 1" style="width: 45px; height: 100%;">
                                                 <div>
                                                     <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">
                                                         Tomorrow office. will be free on sunday.</p>
@@ -85,8 +87,7 @@
                                                         class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">
                                                         12-September-2023</p>
                                                 </div>
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
-                                                    alt="avatar 1" style="width: 45px; height: 100%;">
+
                                             </div>
                                             <!--Start Inline Collapse Feedback-->
                                             <p class="d-inline-flex gap-6">
@@ -105,43 +106,44 @@
 
                                             <div class="collapse" id="collapseUser1">
                                                 <div class="card card-body">
-                                                    <ul class="mb-2">
-                                                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                                                            <div class="d-flex flex-row justify-content-start">
-                                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                                                                    alt="avatar 1" style="width: 45px; height: 100%;">
-                                                                <div>
-                                                                    <p class="small p-2 ms-3 mb-1 rounded-3"
-                                                                        style="background-color: #f5f6f7;">Long time
-                                                                        no
-                                                                        see! Tomorrow office. will be free on
-                                                                        sunday.
-                                                                    </p>
-                                                                    <p class="small ms-3 mb-3 rounded-3 text-muted">
-                                                                        23:58</p>
-                                                                </div>
-                                                            </div>
+                                                    <ul class="ps-2">
 
-                                                            <div class="divider d-flex align-items-center mb-4">
-                                                                <p class="text-center mx-3 mb-0"
-                                                                    style="color: #a2aab7;">Today</p>
-                                                            </div>
+                                                        <div class="d-flex flex-row justify-content-start">
+                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                                                alt="avatar 1" style="width: 45px; height: 100%;">
+                                                            <p class="text-dark py-2 ms-3">Muhammad Luthfi
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="small p-2 ms-3 mb-1 rounded-3"
+                                                                style="background-color: #f5f6f7;">Lorem ipsum dolor
+                                                                sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor incididunt ut labore et dolore magna aliqua.
+                                                            <p class="small ms-4 mb-3 rounded-3 text-muted">
+                                                                23:58 | 03-Okt-23</p>
+                                                        </div>
+                                                        <div class="divider d-flex align-items-center mb-4">
+                                                            <p class="text-center mx-3 mb-0" style="color: #a2aab7;">
+                                                                Today</p>
+                                                        </div>
 
-                                                            <div class="d-flex flex-row justify-content-start">
-                                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                                                                    alt="avatar 1" style="width: 45px; height: 100%;">
-                                                                <div>
-                                                                    <p class="small p-2 ms-3 mb-1 rounded-3"
-                                                                        style="background-color: #f5f6f7;">I will
-                                                                        meet
-                                                                        you Sandon Square sharp at 10 AM</p>
-                                                                    <p class="small ms-3 mb-3 rounded-3 text-muted">
-                                                                        23:58</p>
-                                                                </div>
-                                                            </div>
-                                                        </a>
+                                                        <div class="d-flex flex-row justify-content-start">
+                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                                                alt="avatar 2" style="width: 45px; height: 100%;">
+                                                            <p class="text-dark py-2 ms-3">Angelia
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="small p-2 ms-3 mb-1 rounded-3"
+                                                                style="background-color: #f5f6f7;">Ut enim ad minim
+                                                                veniam, quis nostrud exercitation ullamco laboris nisi
+                                                                ut aliquip ex ea commodo consequat.
+                                                            </p>
+                                                            <p class="small ms-4 mb-3 rounded-3 text-muted">
+                                                                23:58 | 03-Okt-23</p>
+                                                        </div>
+
                                                         <p class="d-inline-flex gap-1">
-
                                                             <button class="btn btn-link text-secondary" type="button"
                                                                 data-bs-toggle="collapsed" data-bs-target="#collaps"
                                                                 aria-expanded="false" aria-controls="collapseExample">
@@ -194,7 +196,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-10 col-md-6 col-12 mx-auto">
+                                <div class="col-lg-12 ps-5">
                                     <div class="card-body ps-lg-0 mt-1 rounded-pill">
 
                                         <div class="card-body">
@@ -206,7 +208,9 @@
                                                     <p class="small mb-0">What are you doing tomorrow? </p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex flex-row justify-content-end mb-2 pt-1">
+                                            <div class="d-flex flex-row-reverse justify-content-start pt-1">
+                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                                                    alt="avatar 1" style="width: 45px; height: 100%;">
                                                 <div>
                                                     <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">
                                                         Tomorrow office. will be free on sunday.</p>
@@ -214,63 +218,63 @@
                                                         class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">
                                                         12-September-2023</p>
                                                 </div>
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
-                                                    alt="avatar 1" style="width: 45px; height: 100%;">
+
                                             </div>
                                             <!--Start Inline Collapse Feedback-->
                                             <p class="d-inline-flex gap-6">
                                                 <a class="btn btn-link text-info" data-bs-toggle="collapse"
                                                     href="#" role="button" aria-expanded="false"
-                                                    aria-controls="collapseUser2">
+                                                    aria-controls="collapseUser1">
                                                     <i class="bi bi-heart mx-auto"><span class="mx-1">Like</i>
                                                 </a>
                                                 <button class="btn btn-link text-info" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseUser2"
-                                                    aria-expanded="false" aria-controls="collapsefeed2">
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseUser1"
+                                                    aria-expanded="false" aria-controls="collapsefeed1">
                                                     <i class="bi bi-chat-dots mx-auto"><span
                                                             class="mx-1">Feedback</span></i>
                                                 </button>
                                             </p>
 
-                                            <div class="collapse" id="collapseUser2">
+                                            <div class="collapse" id="collapseUser1">
                                                 <div class="card card-body">
-                                                    <ul class="mb-2">
-                                                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                                                            <div class="d-flex flex-row justify-content-start">
-                                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                                                                    alt="avatar 1" style="width: 45px; height: 100%;">
-                                                                <div>
-                                                                    <p class="small p-2 ms-3 mb-1 rounded-3"
-                                                                        style="background-color: #f5f6f7;">Long time
-                                                                        no
-                                                                        see! Tomorrow office. will be free on
-                                                                        sunday.
-                                                                    </p>
-                                                                    <p class="small ms-3 mb-3 rounded-3 text-muted">
-                                                                        23:58</p>
-                                                                </div>
-                                                            </div>
+                                                    <ul class="ps-2">
 
-                                                            <div class="divider d-flex align-items-center mb-4">
-                                                                <p class="text-center mx-3 mb-0"
-                                                                    style="color: #a2aab7;">Today</p>
-                                                            </div>
+                                                        <div class="d-flex flex-row justify-content-start">
+                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                                                alt="avatar 1" style="width: 45px; height: 100%;">
+                                                            <p class="text-dark py-2 ms-3">Muhammad Luthfi
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="small p-2 ms-3 mb-1 rounded-3"
+                                                                style="background-color: #f5f6f7;">Lorem ipsum dolor
+                                                                sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor incididunt ut labore et dolore magna aliqua.
+                                                            <p class="small ms-4 mb-3 rounded-3 text-muted">
+                                                                23:58 | 03-Okt-23</p>
+                                                        </div>
+                                                        <div class="divider d-flex align-items-center mb-4">
+                                                            <p class="text-center mx-3 mb-0" style="color: #a2aab7;">
+                                                                Today</p>
+                                                        </div>
 
-                                                            <div class="d-flex flex-row justify-content-start">
-                                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                                                                    alt="avatar 1" style="width: 45px; height: 100%;">
-                                                                <div>
-                                                                    <p class="small p-2 ms-3 mb-1 rounded-3"
-                                                                        style="background-color: #f5f6f7;">I will
-                                                                        meet
-                                                                        you Sandon Square sharp at 10 AM</p>
-                                                                    <p class="small ms-3 mb-3 rounded-3 text-muted">
-                                                                        23:58</p>
-                                                                </div>
-                                                            </div>
-                                                        </a>
+                                                        <div class="d-flex flex-row justify-content-start">
+                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                                                alt="avatar 2" style="width: 45px; height: 100%;">
+                                                            <p class="text-dark py-2 ms-3">Angelia
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="small p-2 ms-3 mb-1 rounded-3"
+                                                                style="background-color: #f5f6f7;">Ut enim ad minim
+                                                                veniam, quis nostrud exercitation ullamco laboris nisi
+                                                                ut aliquip ex ea commodo consequat.
+                                                            </p>
+                                                            <p class="small ms-4 mb-3 rounded-3 text-muted">
+                                                                23:58 | 03-Okt-23</p>
+                                                        </div>
+
                                                         <p class="d-inline-flex gap-1">
-
                                                             <button class="btn btn-link text-secondary" type="button"
                                                                 data-bs-toggle="collapsed" data-bs-target="#collaps"
                                                                 aria-expanded="false" aria-controls="collapseExample">
@@ -279,7 +283,7 @@
                                                         </p>
                                                         <div
                                                             class="card-footer text-muted d-flex justify-content-start align-items-center ">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
+                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                                                                 alt="avatar 3" style="width: 40px; height: 100%;">
                                                             <input type="text" class="form-control form-control-lg"
                                                                 id="exampleFormControlInput1"
