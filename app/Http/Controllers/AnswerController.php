@@ -42,7 +42,7 @@ class AnswerController extends Controller
         try {
             $request->validate([
                 'q_key' => 'required',
-                'answer_text' => 'required|min:10',
+                'answer_text' => 'required',
             ]);
             $question_id = Question::where('question_key', $request->q_key)->first()->id;
             Answer::create([

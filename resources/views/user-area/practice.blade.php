@@ -49,9 +49,15 @@
                                 <div class="mb-1 col-md-6">
 
                                     <span class="text-dark">
-                                        {{ $question->question_english }}
+                                        @if (isset($question))
+                                            {{ $question->question_english }}
+                                            <input type="hidden" name="q_key"
+                                                value="{{ $question->question_key }}" />
+                                        @else
+                                            <strong class="text-warning">No questions available for you. Looks like
+                                                you have exceeded the maximum level</strong>
+                                        @endif
                                     </span>
-                                    <input type="hidden" name="q_key" value="{{ $question->question_key }}" />
                                 </div>
 
                                 <div class="mb-3 col-md-12">
