@@ -8,19 +8,16 @@
 
                     </script>,
                     made with <i class="fa fa-heart"></i> by
-                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a> &
-                    <a href="https://www.updivision.com" class="font-weight-bold" target="_blank"> UPDIVISION</a>
+                    <a href="https://www.instagram.com/nulishofficial/" class="font-weight-bold text-info" target="_blank">
+                        <img src="{{ asset('assets') }}/img/favicon1.png" class="mb-2 footer-logo" alt="main_logo">Nulish Teams</a>
                     for a better web.
                 </div>
             </div>
             <div class="col-lg-6">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+
                     <li class="nav-item">
-                        <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative
-                            Tim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://www.updivision.com" class="nav-link text-muted" target="_blank">UPDIVISION</a>
+                        <a href="https://www.updivision.com" class="nav-link text-muted" target="_blank">NULISH TEAMS</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"

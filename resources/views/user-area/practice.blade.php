@@ -55,7 +55,7 @@
                                 </div>
 
                                 <div class="mb-3 col-md-12">
-                                    <label for="floatingTextarea2">About</label>
+                                    <label for="floatingTextarea2">Answer!</label>
                                     <textarea class="form-control border border-2 p-2" placeholder="Type your answer Here" id="floatingTextarea2"
                                         name="answer_text" rows="4" cols="50"></textarea>
                                 </div>

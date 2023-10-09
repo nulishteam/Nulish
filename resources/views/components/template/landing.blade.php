@@ -44,7 +44,7 @@
     {{ $slot }}
 
     <!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
-    <section class="my-5 pt-5">
+    {{-- <section class="my-5 pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto">
@@ -74,18 +74,19 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
     </div>
     <footer class="footer pt-5 mt-5">
         <div class="container">
             <div class=" row">
                 <div class="col-md-3 mb-4 ms-auto">
-                    <div>
-                        <a href="https://www.creative-tim.com/product/material-kit">
+                    <div class="mx-5">
+                        <a href="https://www.instagram.com/nulishofficial/">
                             <img src="{{ asset('assets') }}/img/favicon1.png" class="mb-2 mx-2 footer-logo" alt="main_logo">
+                            <h6 class="font-weight-bolder mb-4 text-info">Nulish</h6>
                         </a>
-                        <h6 class="font-weight-bolder mb-4 text-info">Nulish</h6>
+
                     </div>
                     <div>
                         <ul class="d-flex flex-row ms-n3 nav">
