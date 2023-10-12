@@ -1,9 +1,6 @@
 <x-template.dashboard bodyClass="g-sidenav-show  bg-gray-200">
     <x-navbars.sidebar activePage="question-master"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Question Master"></x-navbars.navs.auth>
-        <!-- End Navbar -->
 
         <div class="container-fluid">
             <div class="card">

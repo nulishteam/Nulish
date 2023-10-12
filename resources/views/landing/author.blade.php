@@ -88,8 +88,22 @@
                                 <p>
                                     Prodi Sistem Informasi
                                 </p>
-                                <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                    href="https://www.instagram.com/cak_ipho/">Follow</a>
+                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/cak_ipho/">Follow</a> --}}
+                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://www.instagram.com/cak_ipho/" target="_blank">
+                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://github.com/cakipho"
+                                                target="_blank">
+                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                             </div>
                         </div>
                     </div>
@@ -111,8 +125,22 @@
                                 <p>
                                     Prodi Sistem Informasi
                                 </p>
-                                <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                    href="https://www.instagram.com/fa_faiz099/">Follow</a>
+                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/fa_faiz099/">Follow</a> --}}
+                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://www.instagram.com/fa_faiz099/" target="_blank">
+                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://github.com/faiz099"
+                                                target="_blank">
+                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                             </div>
                         </div>
                     </div>
@@ -134,8 +162,23 @@
                                 <p>
                                     Prodi Sistem Informasi
                                 </p>
-                                <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                    href="https://www.instagram.com/lutpi_hamid/">Follow</a>
+                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/lutpi_hamid/">Follow</a> --}}
+                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://www.instagram.com/lutpi_hamid/" target="_blank">
+                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://github.com/Luthfi1995"
+                                                target="_blank">
+                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
                             </div>
                         </div>
                     </div>
@@ -157,8 +200,22 @@
                                 <p>
                                     Prodi Sistem Informasi
                                 </p>
-                                <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                    href="https://www.instagram.com/mraderamdani/">Follow</a>
+                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/mraderamdani/">Follow</a> --}}
+                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://www.instagram.com/mraderamdani/" target="_blank">
+                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://github.com/aderamdani"
+                                                target="_blank">
+                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                             </div>
                         </div>
                     </div>
@@ -179,8 +236,15 @@
                                         Dosen Pembimbing
                                         Prodi Sistem Informasi
                                     </p>
-                                    <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                        href="https://www.instagram.com/nulishofficial/">Follow</a>
+                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link pe-1" href="https://www.instagram.com/nulishofficial/" target="_blank">
+                                                <i class="fab fa-instagram text-lg opacity-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
                                 </div>
                             </div>
                         </div>

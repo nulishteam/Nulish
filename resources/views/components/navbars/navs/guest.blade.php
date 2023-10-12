@@ -19,7 +19,7 @@
                 @auth
                     <li class="nav-item">
                         <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
-                            href="{{ route('user-area') }}">
+                            href="{{ route('user-area/id') }}">
                             <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                             User Area
                         </a>

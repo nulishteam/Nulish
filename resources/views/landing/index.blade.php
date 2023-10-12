@@ -16,7 +16,7 @@
                                 data-bs-toggle="tooltip" data-bs-placement="right" title="Test">Your Ability Test?</a>
                         @endguest
                         @auth
-                            <a type="submit" class="btn bg-white text-dark" href="{{ route('user-area') }}"
+                            <a type="submit" class="btn bg-white text-dark" href="{{ route('user-area/id') }}"
                                 data-bs-toggle="tooltip" data-bs-placement="left" title="Go to ">User Area</a>
                         @endauth
 

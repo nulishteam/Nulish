@@ -65,7 +65,7 @@
                                         <div class="d-none d-lg-block">
                                             <li class="nav-item dropdown dropdown-hover dropdown-subitem">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('user-area') }}">
+                                                    href="{{ route('user-area/id') }}">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
                                                             <h6
@@ -129,7 +129,7 @@
                                                 <div class="d-flex mb-2">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <a href="{{ route('user-area') }}">
+                                                            <a href="{{ route('user-area/id') }}">
                                                                 <h6
                                                                     class="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">
                                                                     <i
@@ -188,7 +188,7 @@
                                         <div class="d-none d-lg-block">
                                             <li class="nav-item dropdown dropdown-hover dropdown-subitem">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('user-area') }}">
+                                                    href="{{ route('user-area/id') }}">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
                                                             <h6
@@ -228,7 +228,7 @@
                                                 <div class="d-flex mb-2">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <a href="{{ route('user-area') }}">
+                                                            <a href="{{ route('user-area/id') }}">
                                                                 <h6
                                                                     class="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">
                                                                     <i

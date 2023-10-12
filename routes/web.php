@@ -22,9 +22,11 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CobaController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeItemController;
@@ -32,7 +34,6 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LandingController;
 
 // Route::get('/', function () {return  view('landing.index');})->name('index');
 // Route::get('/index', function () {return  redirect()->route('index');});
@@ -71,7 +72,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Route::prefix('user-area')->middleware('auth')->group(function () {
-    Route::get('', [DashboardController::class, 'index'])->name('user-area');
+    Route::get('', [DashboardController::class, 'index'])->name('user-area/id');
+    Route::get('report', [CobaController::class, 'index'])->name('report');
     Route::post('sign-out', [SessionsController::class, 'destroy'])->name('logout');
     Route::get('profile', [ProfileController::class, 'create'])->name('profile');
     Route::post('user-profile', [ProfileController::class, 'update']);

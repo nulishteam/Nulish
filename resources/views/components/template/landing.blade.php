@@ -77,46 +77,30 @@
     </section> --}}
     <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
     </div>
-    <footer class="footer pt-5 mt-5">
+    <footer class="footer pt-2 mt-5">
         <div class="container">
-            <div class=" row">
-                <div class="col-md-3 mb-4 ms-auto">
-                    <div class="mx-5">
+            <div class="row">
+                <div class="col-md-3 mb-0 ms-auto">
+                    <div class="justify-content-center">
                         <a href="https://www.instagram.com/nulishofficial/">
-                            <img src="{{ asset('assets') }}/img/favicon1.png" class="mb-2 mx-2 footer-logo" alt="main_logo">
-                            <h6 class="font-weight-bolder mb-4 text-info">Nulish</h6>
+                            <h6 class="font-weight-bolder mb-4 text-info">Nulish Teams</h6>
                         </a>
 
                     </div>
                     <div>
                         <ul class="d-flex flex-row ms-n3 nav">
                             <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://www.facebook.com/CreativeTim" target="_blank">
-                                    <i class="fab fa-facebook text-lg opacity-8"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Facebook"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://twitter.com/creativetim" target="_blank">
-                                    <i class="fab fa-twitter text-lg opacity-8"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Twitter"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link pe-1" href="https://www.instagram.com/nulishofficial/" target="_blank">
-                                    <i class="fab fa-instagram text-lg opacity-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
+                                    <i class="fab fa-instagram text-lg opacity-8 text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link pe-1" href="https://github.com/creativetimofficial"
                                     target="_blank">
-                                    <i class="fab fa-github text-lg opacity-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
+                                    <i class="fab fa-github text-lg opacity-8 text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link pe-1"
-                                    href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
-                                    <i class="fab fa-youtube text-lg opacity-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Youtube"></i>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -129,23 +113,7 @@
                                     About Us
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/templates/free"
-                                    target="_blank">
-                                    Freebies
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/templates/premium"
-                                    target="_blank">
-                                    Premium Tools
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/blog" target="_blank">
-                                    Blog
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -158,17 +126,7 @@
                                     Illustrations
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
-                                    Bits & Snippets
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/affiliates/new"
-                                    target="_blank">
-                                    Affiliate Program
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -181,12 +139,7 @@
                                     Contact Us
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center"
-                                    target="_blank">
-                                    Knowledge Center
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="https://services.creative-tim.com/?ref=ct-mk2-footer"
                                     target="_blank">

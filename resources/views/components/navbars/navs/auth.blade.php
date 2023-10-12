@@ -12,7 +12,7 @@
                 <div class="container-fluid">
                     <div class=" navbar-brand px-0 font-weight-bolder ms-sm-2">
 
-                        <a href=" {{ route('user-area') }} ">
+                        <a href=" {{ route('user-area/id') }} ">
                             <img src="{{ asset('assets/img/logos/logos.png') }}" width="80px" alt="logos">
                         </a>
                         @if ($titlePage)
@@ -45,7 +45,7 @@
                                     <p class="d-inline text-sm z-index-1">Practice</p>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-auto">
+                            <li class="nav-item dropdown dropdown-hover ms-lg-auto">
                                 <a class="nav-link ps-2 d-flex cursor-pointer align-items-center"
                                     id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-user me-1 opacity-8"></i>
@@ -58,7 +58,7 @@
                                         <div class="d-none d-lg-block">
                                             <li class="nav-item dropdown dropdown-hover dropdown-subitem">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('user-area') }}">
+                                                    href="{{ route('user-area/id') }}">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
                                                             <h6
@@ -122,7 +122,7 @@
                                                 <div class="d-flex mb-2">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <a href="{{ route('user-area') }}">
+                                                            <a href="{{ route('user-area/id') }}">
                                                                 <h6
                                                                     class="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">
                                                                     <i
@@ -181,7 +181,7 @@
                                         <div class="d-none d-lg-block">
                                             <li class="nav-item dropdown dropdown-hover dropdown-subitem">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('user-area') }}">
+                                                    href="{{ route('user-area/id') }}">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
                                                             <h6
@@ -221,7 +221,7 @@
                                                 <div class="d-flex mb-2">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <a href="{{ route('user-area') }}">
+                                                            <a href="{{ route('user-area/id') }}">
                                                                 <h6
                                                                     class="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">
                                                                     <i
@@ -344,6 +344,13 @@
                                     </a>
                                 </li> --}}
                             </ul>
+                            <li class="nav-item ms-lg-auto">
+                                <a class="nav-link nav-link-icon me-2" href="{{ route('report') }}"
+                                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Coba">
+                                    <i class="fa fa-highlighter opacity-8"></i>
+                                    <p class="d-inline text-sm z-index-1">Report</p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
