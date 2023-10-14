@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CobaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,19 +21,18 @@ use Illuminate\Support\Facades\Auth;
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CobaController;
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\LevelController;
-use App\Http\Controllers\LandingController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HomeItemController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LevelController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {return  view('landing.index');})->name('index');
 // Route::get('/index', function () {return  redirect()->route('index');});
@@ -46,11 +45,11 @@ Route::prefix('')->group(function () {
     Route::get('', [LandingController::class, 'index'])->name('index');
 
     Route::get('index', function () {
-        return  redirect()->route('index');
+        return redirect()->route('index');
     });
 
     Route::get('home', function () {
-        return  redirect()->route('index');
+        return redirect()->route('index');
     })->name('home');
 
     Route::get('author', function () {
@@ -75,7 +74,7 @@ Route::prefix('user-area')->middleware('auth')->group(function () {
     Route::get('', [DashboardController::class, 'index'])->name('user-area/id');
     Route::get('report', [CobaController::class, 'index'])->name('report');
     Route::post('sign-out', [SessionsController::class, 'destroy'])->name('logout');
-    Route::get('profile', [ProfileController::class, 'create'])->name('profile');
+    Route::get('profile/{key}', [ProfileController::class, 'show'])->name('profile');
     Route::post('user-profile', [ProfileController::class, 'update']);
     Route::get('billing', function () {
         return view('user-area.billing');
@@ -118,7 +117,6 @@ Route::get('verify', function () {
 Route::get('/reset-password/{token}', function ($token) {
     return view('sessions.password.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
-
 
 Route::group(['middleware' => 'auth'], function () {
 });

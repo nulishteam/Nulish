@@ -70,20 +70,17 @@
                                         </div>
 
                                         <!--Start Inline Collapse Feedback-->
-                                        <div class="d-flex flex-row-reverse justify-content-start pt-1 m-0 me-5">
-                                            <div class="d-inline-flex m-0">
-                                                <a class="btn btn-link text-info" data-bs-toggle="collapse"
-                                                    href="#" role="button" aria-expanded="false"
-                                                    aria-controls="collapseUser1">
-                                                    <i class="bi bi-heart mx-auto"><span class="mx-1">Like</i>
-                                                </a>
-                                                <button class="btn btn-link text-info" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseUser1"
-                                                    aria-expanded="false" aria-controls="collapsefeed1">
-                                                    <i class="bi bi-chat-dots mx-auto"><span
-                                                            class="mx-1">Feedback</span></i>
-                                                </button>
-                                            </div>
+                                        <div class="d-flex justify-content-end m-0 me-5">
+                                            <a class="btn btn-link text-info" data-bs-toggle="collapse" href="#"
+                                                role="button" aria-expanded="false" aria-controls="collapseUser1">
+                                                <i class="bi bi-heart mx-auto"><span class="mx-1">Like</i>
+                                            </a>
+                                            <a class="btn btn-link text-info" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseUser1" aria-expanded="false"
+                                                aria-controls="collapsefeed1">
+                                                <i class="bi bi-chat-dots mx-auto"><span
+                                                        class="mx-1">Feedback</span></i>
+                                            </a>
                                         </div>
 
                                         <div class="collapse" id="collapseUser1">
@@ -95,13 +92,17 @@
                                                         <div class="container container-fluid">
                                                             <div class="text-dark pt-1 mx-auto">Clara Croft<button
                                                                     type="button" class="btn btn-link my-auto"
-                                                                    style="color: black;" data-bs-toggle="collapse" data-bs-target="#collapsereport"
-                                                                    aria-expanded="false" aria-controls="collapserepot"><i
+                                                                    style="color: black;" data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapsereport"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="collapserepot"><i
                                                                         class="bi bi-three-dots-vertical"></i>
 
                                                                 </button>
-                                                                <div class="collapse collapse-horizontal" id="collapsereport">
-                                                                    <div class="row mx-8" style="width:150px; height:50px;">
+                                                                <div class="collapse collapse-horizontal"
+                                                                    id="collapsereport">
+                                                                    <div class="row mx-8"
+                                                                        style="width:150px; height:50px;">
                                                                         <h6 class="text-dark">Report</h6>
                                                                     </div>
                                                                 </div>
@@ -144,9 +145,11 @@
                                                         class="card-footer text-muted d-flex justify-content-start align-items-center">
                                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                                                             alt="avatar 3" style="width: 40px; height: 100%;">
-                                                        <input type="text" class="form-control form-control-lg border border-secondary"
+                                                        <input type="text"
+                                                            class="form-control form-control-lg border border-secondary"
                                                             id="FormControlInput1" placeholder="Type message">
-                                                        <a class="ms-3" href="#!" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Send"><i
+                                                        <a class="ms-3" href="#!" data-bs-toggle="tooltip"
+                                                            data-bs-placement="bottom" title="Send"><i
                                                                 class="fas fa-paper-plane"></i></a>
                                                     </div>
                                                 </ul>
@@ -259,9 +262,11 @@
                                                         class="card-footer text-muted d-flex justify-content-start align-items-center ">
                                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                                                             alt="avatar 3" style="width: 40px; height: 100%;">
-                                                        <input type="text" class="form-control form-control-lg border border-secondary"
+                                                        <input type="text"
+                                                            class="form-control form-control-lg border border-secondary"
                                                             id="FormControlInput2" placeholder="Type message">
-                                                        <a class="ms-3" href="#!" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Send"><i
+                                                        <a class="ms-3" href="#!" data-bs-toggle="tooltip"
+                                                            data-bs-placement="bottom" title="Send"><i
                                                                 class="fas fa-paper-plane"></i></a>
                                                     </div>
                                                 </ul>

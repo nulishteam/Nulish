@@ -89,7 +89,7 @@
                                                 </a>
                                                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                                                     <a class="dropdown-item ps-3 border-radius-md mb-1"
-                                                        href="{{ route('profile') }}">
+                                                        href="{{ route('profile', Auth::user()->user_key) }}">
                                                         <i class="fa fa-eye me-1"></i>
                                                         <span>View Profile</span>
                                                     </a>
@@ -148,7 +148,7 @@
                                                     </div>
                                                 </div>
                                                 <a class="dropdown-item ps-3 border-radius-md mb-1"
-                                                    href="{{ route('profile') }}">
+                                                    href="{{ route('profile', Auth::user()->user_key) }}">
                                                     <i class="fa fa-eye text-gradient text-warning me-1"></i>
                                                     <span>View Profile</span>
                                                 </a>
@@ -252,7 +252,8 @@
                                 </ul>
                             </li>
                             <ul class="navbar-nav  justify-content-end">
-                                <li class="nav-item dropdown ms-lg-auto pe-2 px-3 d-flex align-items-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Message">
+                                <li class="nav-item dropdown ms-lg-auto pe-2 px-3 d-flex align-items-center"
+                                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Message">
                                     <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa fa-bell cursor-pointer"></i>
@@ -264,7 +265,8 @@
                                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                                 <div class="d-flex py-1">
                                                     <div class="my-auto">
-                                                        <img src="{{ asset('assets') }}/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                                                        <img src="{{ asset('assets') }}/img/team-2.jpg"
+                                                            class="avatar avatar-sm  me-3 ">
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="text-sm font-weight-normal mb-1">
@@ -287,7 +289,8 @@
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center">
                                                         <h6 class="text-sm font-weight-normal mb-1">
-                                                            <span class="font-weight-bold">New album</span> by Travis Scott
+                                                            <span class="font-weight-bold">New album</span> by Travis
+                                                            Scott
                                                         </h6>
                                                         <p class="text-xs text-secondary mb-0">
                                                             <i class="fa fa-clock me-1"></i>
@@ -301,15 +304,17 @@
                                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                                 <div class="d-flex py-1">
                                                     <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                                                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        <svg width="12px" height="12px" viewBox="0 0 43 36"
+                                                            version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                             xmlns:xlink="http://www.w3.org/1999/xlink">
                                                             <title>credit-card</title>
-                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF"
-                                                                    fill-rule="nonzero">
+                                                            <g stroke="none" stroke-width="1" fill="none"
+                                                                fill-rule="evenodd">
+                                                                <g transform="translate(-2169.000000, -745.000000)"
+                                                                    fill="#FFFFFF" fill-rule="nonzero">
                                                                     <g transform="translate(1716.000000, 291.000000)">
-                                                                        <g transform="translate(453.000000, 454.000000)">
+                                                                        <g
+                                                                            transform="translate(453.000000, 454.000000)">
                                                                             <path class="color-background"
                                                                                 d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
                                                                                 opacity="0.593633743"></path>
