@@ -62,7 +62,7 @@ class FAUserSeeder extends Seeder
             User::factory()
                 ->count(1)
                 ->create([
-                    'name' => 'User ' . $i,
+                    'name' => fake()->name(),
                     'level_id' => fake()->numberBetween(5, 7),
                     'email' => 'user' . $i . '@example.com',
                     'password' => ('123456'),

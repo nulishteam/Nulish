@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Answer;
 use App\Models\User;
-use Carbon\Carbon;
+use App\Models\Answer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ProfileController extends Controller
 {
@@ -22,7 +22,7 @@ class ProfileController extends Controller
             abort(404);
         }
         $now = new Carbon();
-        $answers = Answer::where('user_id', $user->id)->with('question')->paginate(20);
+        $answers = Answer::where('user_id', $user->id)->orderBy('created_at', 'DESC')->with('question')->paginate(20);
         return view('user-area.profile', compact('user', 'answers', 'now'));
     }
 

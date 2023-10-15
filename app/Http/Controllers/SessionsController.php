@@ -30,7 +30,7 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect()->route('user-area/id');
+        return redirect()->route('user-area');
     }
 
     public function show()

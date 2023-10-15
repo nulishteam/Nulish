@@ -16,7 +16,7 @@ return new class extends Migration
         $this->down();
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('question_key');
+            $table->string('question_key', 8);
             $table->string('question_english');
             $table->string('question_indonesia')->nullable();
             $table->unsignedBigInteger('level_id');

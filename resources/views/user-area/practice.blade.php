@@ -1,3 +1,4 @@
+{{-- {{ $coba }} --}}
 <x-template.dashboard bodyClass="g-sidenav-show bg-gray-200">
 
 

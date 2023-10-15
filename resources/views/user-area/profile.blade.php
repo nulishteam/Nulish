@@ -14,16 +14,16 @@
                                         <a href="javascript:;">
                                             <div class="p-3 pe-md-3">
                                                 <img class="border-radius-md shadow-lg rounded-circle rounded mx-auto d-block"
-                                                    src="{{ asset('assets/img/bruce-mars.jpg') }}" width="150px"
-                                                    alt="image">
+                                                    src="{{ route('img.retrieve', ['user_image', $user->user_image]) }}"
+                                                    width="150px" alt="image">
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-lg-8 col-md-10 col-12 pt-3">
                                         <div class="card-body mx-2">
-                                            <h6 class="text-dark mx-auto">Muhammad Luthfi</h6>
+                                            <h6 class="text-dark mx-auto">{{ $user->name }}</h6>
                                             <p class="mb-0 text-dark mx-auto">
-                                                Level Name
+                                                {{ $user->level->level_name }}
                                             </p>
 
                                         </div>
@@ -48,16 +48,19 @@
                                 } elseif ($diffVal < 24 * 60 * 60) {
                                     $diffVal = $now->diffInHours($item->created_at);
                                     $diffStr = $diffVal . ' hours ago';
+                                } elseif ($diffVal < 7 * 24 * 60 * 60) {
+                                    $diffVal = $now->diffInDays($item->created_at);
+                                    $diffStr = $diffVal . ' days ago';
                                 } else {
-                                    $diffStr = Carbon::parse($item->created_at)->format('d MMM YYYY');
+                                    $diffStr = $item->created_at->format('d M Y');
                                 }
                             @endphp
                             <!--Start Content-->
-                            <div class="card card-profile bg-gradient-light mb-4">
+                            <div class="card bg-gradient-light mb-4">
                                 <div class="row col-12">
 
                                     <div class="col-lg-12 ps-5">
-                                        <div class="card-body ps-lg-0 mt-1 rounded-pill">
+                                        <div class="card-body pb-1 mt-1 rounded-pill">
 
                                             <div class="d-flex flex-row justify-content-start mb-3">
                                                 <img src="{{ asset('assets/img/favicon1.png') }}" alt="avatar 1"
@@ -71,14 +74,13 @@
 
                                             <div class="d-flex flex-row justify-content-end ">
                                                 <div>
-                                                    <div class="small fw-bold me-3 d-flex justify-content-end py-2">
+                                                    <div class="small fw-bold me-3 d-flex justify-content-end">
                                                         {{ $user->name }}
                                                     </div>
                                                     <div class="small p-2 me-3 text-white rounded-3 bg-secondary">
                                                         {{ $item->answer_text }}</div>
                                                     <p
                                                         class="small ms-0 mb-0 d-flex me-3 rounded-3 text-muted justify-content-end">
-                                                        {{ $item->created_at }} <br />
                                                         {{ $diffStr }}
                                                     </p>
                                                 </div>
@@ -96,15 +98,17 @@
                                                     <i class="bi bi-heart mx-auto"><span class="mx-1">Like</i>
                                                 </a>
                                                 <a class="btn btn-link text-info" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseUser1"
-                                                    aria-expanded="false" aria-controls="collapsefeed1">
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseUser-{{ $item->answer_key }}"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapsefeed-{{ $item->answer_key }}">
                                                     <i class="bi bi-chat-dots mx-auto"><span
                                                             class="mx-1">Feedback</span></i>
                                                 </a>
                                             </div>
 
-                                            <div class="collapse" id="collapseUser1">
-                                                <div class="p-2 bg-white rounded-3">
+                                            <div class="collapse" id="collapseUser-{{ $item->answer_key }}">
+                                                <div class="p-2 border border-white rounded-3">
                                                     <ul class="ps-2">
                                                         <div class="d-flex flex-row justify-content-start">
                                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
@@ -127,8 +131,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="small mb-0 rounded-3"
-                                                                    style="background-color: #f5f6f7;">Lorem ipsum dolor
+                                                                <div class="small mb-0 rounded-3">Lorem ipsum dolor
                                                                     sit amet, consectetur adipiscing elit, sed do
                                                                     eiusmod
                                                                     tempor incididunt ut labore et dolore magna aliqua.
@@ -136,30 +139,6 @@
                                                                     <p class="small ms-0 mb-0 rounded-3 text-muted">
                                                                         23:58 | 03-Okt-2023</p>
                                                                 </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex flex-row justify-content-start">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
-                                                                alt="avatar 6" style="width: 45px; height: 100%;">
-                                                            <div class="container container-fluid">
-                                                                {{-- <div class="text-dark pt-2 mb-0">Angelia</div> --}}
-                                                                <div class="text-dark pt-1 mx-auto">Desi<button
-                                                                        type="button" class="btn btn-link my-auto"
-                                                                        style="color: black;"><i
-                                                                            class="bi bi-three-dots-vertical"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="small mb-0 rounded-3"
-                                                                    style="background-color: #f5f6f7;">Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do
-                                                                    eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua.
-
-                                                                    <p class="small ms-0 mb-0 rounded-3 text-muted">
-                                                                        23:58 | 03-Okt-2023</p>
-                                                                </div>
-
 
                                                             </div>
                                                         </div>

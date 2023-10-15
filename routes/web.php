@@ -71,7 +71,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Route::prefix('user-area')->middleware('auth')->group(function () {
-    Route::get('', [DashboardController::class, 'index'])->name('user-area/id');
+    Route::get('', [DashboardController::class, 'index'])->name('user-area');
     Route::get('report', [CobaController::class, 'index'])->name('report');
     Route::post('sign-out', [SessionsController::class, 'destroy'])->name('logout');
     Route::get('profile/{key}', [ProfileController::class, 'show'])->name('profile');

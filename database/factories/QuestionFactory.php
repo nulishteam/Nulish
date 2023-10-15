@@ -18,11 +18,11 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            'question_english' => $this->faker->sentence(4, false),
+            'question_english' => $this->faker->sentence(6, true) . "?",
             'question_indonesia' => null,
             'level_id' => random_int(5, 7),
             'type_id' => random_int(1, 4),
-            'question_key' => Str::random(16),
+            'question_key' => Str::random(8),
             'created_by' => 1,
             'created_at' => now(),
         ];

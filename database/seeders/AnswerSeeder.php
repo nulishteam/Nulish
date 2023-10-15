@@ -2,8 +2,12 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Answer;
+use App\Models\Question;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class AnswerSeeder extends Seeder
@@ -15,8 +19,32 @@ class AnswerSeeder extends Seeder
      */
     public function run()
     {
-        Answer::factory()
-            ->count(300)
-            ->create();
+        $users  = User::with('level')->orderBy(DB::raw('RAND()'))->get();
+        $questions = Question::with('level')->orderBy(DB::raw('RAND()'))->get();
+        for ($i = 0; $i < 30; $i++) {
+            $user = $users[$i];
+            $uweight = $user->level->level_weight;
+            $count = 0;
+            $time = Carbon::now()->addYears(-1);
+            if ($uweight < 10) {
+                foreach ($questions as $question) {
+                    $now = Carbon::now();
+                    $qweight = $question->level->level_weight;
+                    if ($qweight <= $uweight && $count < $uweight * 100) {
+                        if ($time < $now)
+                            $time = $time->addSeconds(rand(24 * 60 * 60, 7 * 24 * 60 * 60));
+                        if ($time > $now)
+                            $time = $now->addSecond(rand(-24 * 60 * 60, -1));
+                        Answer::factory()
+                            ->create([
+                                'user_id' => $user->id,
+                                'question_id' => $question->id,
+                                'created_at' => $time,
+                            ]);
+                        $count++;
+                    }
+                }
+            }
+        }
     }
 }

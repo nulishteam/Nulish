@@ -16,7 +16,7 @@
                                 data-bs-toggle="tooltip" data-bs-placement="right" title="Test">Your Ability Test?</a>
                         @endguest
                         @auth
-                            <a type="submit" class="btn bg-white text-dark" href="{{ route('user-area/id') }}"
+                            <a type="submit" class="btn bg-white text-dark" href="{{ route('user-area') }}"
                                 data-bs-toggle="tooltip" data-bs-placement="left" title="Go to ">User Area</a>
                         @endauth
 
@@ -123,7 +123,8 @@
                             <div class="card-header p-0 position-relative py-4">
                                 <a class="d-block blur-shadow-image">
                                     <img src="../assets/img/examples/promosi1.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow runded mx-auto d-block  border-radius-lg" loading="lazy">
+                                        class="img-fluid shadow runded mx-auto d-block  border-radius-lg"
+                                        loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body px-0">

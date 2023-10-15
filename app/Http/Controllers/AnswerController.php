@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\Answer;
 use App\Models\Question;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,6 +50,7 @@ class AnswerController extends Controller
                 'user_id' => Auth::user()->id,
                 'question_id' => $question_id,
                 'answer_text' => $request->answer_text,
+                'answer_key' => $this->keyGen(),
             ]);
             return redirect()->route('user-area');
         } catch (Exception $ex) {
@@ -99,5 +101,17 @@ class AnswerController extends Controller
     public function destroy(Answer $answer)
     {
         //
+    }
+
+    private function keyGen()
+    {
+        // $faker = Factory::create();
+        $key = Str::random(16);
+        $cek = Answer::where('answer_key', $key)->get('answer_key')->count();
+        if ($cek > 0) {
+            $key = $this->keyGen();
+        }
+
+        return $key;
     }
 }

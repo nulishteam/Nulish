@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('question_id');
             $table->foreign('question_id')->references('id')->on('questions');
             $table->string('answer_text');
+            $table->string('answer_key', 16)->unique();
             $table->timestamps();
             $table->softDeletes();
         });

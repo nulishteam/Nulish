@@ -65,7 +65,7 @@
                                         <div class="d-none d-lg-block">
                                             <li class="nav-item dropdown dropdown-hover dropdown-subitem">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('user-area/id') }}">
+                                                    href="{{ route('user-area') }}">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
                                                             <h6
@@ -96,7 +96,7 @@
                                                 </a>
                                                 <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                                                     <a class="dropdown-item ps-3 border-radius-md mb-1"
-                                                        href="{{ route('profile') }}">
+                                                        href="{{ route('profile', Auth::user()->user_key) }}">
                                                         <i class="fa fa-eye me-1"></i>
                                                         <span>View Profile</span>
                                                     </a>
@@ -129,7 +129,7 @@
                                                 <div class="d-flex mb-2">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <a href="{{ route('user-area/id') }}">
+                                                            <a href="{{ route('user-area') }}">
                                                                 <h6
                                                                     class="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">
                                                                     <i
@@ -155,7 +155,7 @@
                                                     </div>
                                                 </div>
                                                 <a class="dropdown-item ps-3 border-radius-md mb-1"
-                                                    href="{{ route('profile') }}">
+                                                    href="{{ route('profile', Auth::user()->user_key) }}">
                                                     <i class="fa fa-eye text-gradient text-warning me-1"></i>
                                                     <span>View Profile</span>
                                                 </a>
@@ -188,7 +188,7 @@
                                         <div class="d-none d-lg-block">
                                             <li class="nav-item dropdown dropdown-hover dropdown-subitem">
                                                 <a class="dropdown-item py-2 ps-3 border-radius-md"
-                                                    href="{{ route('user-area/id') }}">
+                                                    href="{{ route('user-area') }}">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
                                                             <h6
@@ -228,7 +228,7 @@
                                                 <div class="d-flex mb-2">
                                                     <div class="w-100 d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <a href="{{ route('user-area/id') }}">
+                                                            <a href="{{ route('user-area') }}">
                                                                 <h6
                                                                     class="dropdown-header text-dark d-flex justify-content-cente align-items-center p-0">
                                                                     <i

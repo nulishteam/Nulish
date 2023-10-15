@@ -169,7 +169,7 @@ class QuestionController extends Controller
     private function keyGen()
     {
         // $faker = Factory::create();
-        $key = Str::random(16);
+        $key = Str::random(8);
         $cek = Question::where('question_key', $key)->get('question_key')->count();
         if ($cek > 0) {
             $key = $this->keyGen();

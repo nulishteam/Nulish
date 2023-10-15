@@ -19,13 +19,13 @@
                 @auth
                     <li class="nav-item">
                         <a class="nav-link d-flex align-items-center me-2 active" aria-current="page"
-                            href="{{ route('user-area/id') }}">
+                            href="{{ route('user-area') }}">
                             <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                             User Area
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-2" href="{{ route('profile') }}">
+                        <a class="nav-link me-2" href="{{ route('profile', Auth::user()->user_key) }}">
                             <i class="fa fa-user opacity-6 text-dark me-1"></i>
                             Profile
                         </a>

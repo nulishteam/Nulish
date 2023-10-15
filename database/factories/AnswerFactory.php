@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +20,8 @@ class AnswerFactory extends Factory
         return [
             'user_id' => 11,
             'question_id' => rand(1, 500),
-            'answer_text' => $this->faker->sentence(4, false),
+            'answer_text' => $this->faker->sentence(4, true),
+            'answer_key' => Str::random(16),
         ];
     }
 }
