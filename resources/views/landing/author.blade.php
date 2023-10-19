@@ -11,6 +11,7 @@
     </header>
     <!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
     <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
+
         <!-- START Testimonials w/ user image & text & info -->
         <section class="py-sm-7 py-5 position-relative">
             <div class="container">
@@ -65,16 +66,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="mb-5 text-center">Check my Social Media</h3>
+                        <h3 class="mb-5 text-center text-dark">Check My Social Media</h3>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-3 col-sm-6 mb-2">
+                    <span class="mask opacity-3 my-6" style="background-image: url('assets/img/logos/Logo-UT.png'); height:150vh;">
+                        {{-- <div class="mask rounded-3" style="background-color: rgba(179, 175, 175, 0.6); ">
+                        </div> --}}
+                    </span>
+                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
                         <div class="card">
                             <div class="card-header p-0 position-relative text-center">
                                 <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Rivo.png" alt="img-blur-shadow" width="130px" height="100px"
+                                    <img src="../assets/img/teams/Rivo.png" alt="img-blur-shadow" width="130px"
                                         class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
@@ -107,11 +112,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 mb-2">
+                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
                         <div class="card">
                             <div class="card-header p-0 position-relative text-center">
                                 <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Faiz.png" alt="img-blur-shadow" width="150px"
+                                    <img src="../assets/img/teams/Faiz2.png" alt="img-blur-shadow" width="130px"
                                         class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
@@ -144,11 +149,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 mb-2">
+                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
                         <div class="card">
                             <div class="card-header p-0 position-relative text-center">
                                 <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Luthfi.png" alt="img-blur-shadow" width="155px"
+                                    <img src="../assets/img/teams/Luthfi1.png" alt="img-blur-shadow" width="130px"
                                         class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
@@ -182,11 +187,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 mb-2">
+                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
                         <div class="card">
                             <div class="card-header p-0 position-relative text-center">
                                 <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Ade.png" alt="img-blur-shadow" width="200px" height="100px"
+                                    <img src="../assets/img/teams/Ade1.png" alt="img-blur-shadow" width="130px"
                                         class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
@@ -219,12 +224,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row my-6">
+                    <div class="row my-4">
                         <div class="col-lg-3 col-sm-6 mx-auto ">
                             <div class="card">
                                 <div class="card-header p-0 position-relative text-center">
                                     <a class="d-block blur-shadow-image">
-                                        <img src="../assets/img/teams/dospem.jpeg" alt="img-blur-shadow" width="150px"
+                                        <img src="../assets/img/teams/dospem.jpeg" alt="img-blur-shadow" width="130px"
                                             class="img-fluid shadow border-radius-lg" loading="lazy">
                                     </a>
                                 </div>
@@ -319,5 +324,6 @@
 
     </section>
     <!-- END Blogs w/ 4 cards w/ image & text & link -->
+
     </div>
 </x-template.landing>

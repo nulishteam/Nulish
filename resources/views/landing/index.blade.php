@@ -161,13 +161,14 @@
         </section>
         <!--end Features Nulish-->
         <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
-        <section class="pb-5 position-relative bg-gradient-dark mx-n3">
+        <section class="pb-5 position-relative bg-gradient-light rounded-3 mx-n3 my-5">
             <div class="container">
                 <div class="row ">
                     <div class="col-md-8 text-start mb-5 mt-5 text-center mx-auto my-auto">
-                        <h3 class="text-white z-index-1 position-relative">The Executive Team</h3>
-                        <p class="text-white opacity-8 mb-0">There’s nothing I really wanted to do in life that I
-                            wasn’t able to get good at. That’s my skill.</p>
+                        <h3 class="text-dark z-index-1 position-relative">Nulish Teams</h3>
+                        <p><a class=" link-opacity-50-hover" href="{{route('author')}}">It's never too late to learn, as long as we have the will to learn..!</a></p>
+
+
                     </div>
                 </div>
                 <div class="row">
@@ -178,14 +179,14 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="{{ asset('assets') }}/img/team-5.jpg" alt="image">
+                                                src="{{ asset('assets') }}/img/teams/Rivo.png" alt="image" height="200px">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-8 col-md-6 col-12 my-auto">
                                     <div class="card-body ps-lg-0">
-                                        <h5 class="mb-0">Emma Roberts</h5>
-                                        <h6 class="text-info">UI Designer</h6>
+                                        <h5 class="mb-0">Rivo Ardian</h5>
+                                        <h6 class="text-info">Project Leader</h6>
                                         <p class="mb-0">Artist is a term applied to a person who engages in an
                                             activity deemed to be an art.</p>
                                     </div>
@@ -200,14 +201,14 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="{{ asset('assets') }}/img/bruce-mars.jpg" alt="image">
+                                                src="{{ asset('assets') }}/img/teams/Faiz2.png" alt="image" height="200px">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-8 col-md-6 col-12 my-auto">
                                     <div class="card-body ps-lg-0">
-                                        <h5 class="mb-0">William Pearce</h5>
-                                        <h6 class="text-info">Boss</h6>
+                                        <h5 class="mb-0">Faiz Nurhadi</h5>
+                                        <h6 class="text-info"> Technical Leader</h6>
                                         <p class="mb-0">Artist is a term applied to a person who engages in an
                                             activity deemed to be an art.</p>
                                     </div>
@@ -224,16 +225,15 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="{{ asset('assets') }}/img/ivana-squares.jpg" alt="image">
+                                                src="{{ asset('assets') }}/img/teams/Luthfi1.png" alt="image" height="200px">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-8 col-md-6 col-12 my-auto">
                                     <div class="card-body ps-lg-0">
-                                        <h5 class="mb-0">Ivana Flow</h5>
-                                        <h6 class="text-info">Athlete</h6>
-                                        <p class="mb-0">Artist is a term applied to a person who engages in an
-                                            activity deemed to be an art.</p>
+                                        <h5 class="mb-0">Muhammad Luthfi Hamid</h5>
+                                        <h6 class="text-info">Front End Dev</h6>
+                                        <p class="mb-0">At first it was forced, but over time I got used to it...!</p>
                                     </div>
                                 </div>
                             </div>
@@ -246,14 +246,14 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="{{ asset('assets') }}/img/ivana-square.jpg" alt="image">
+                                                src="{{ asset('assets') }}/img/teams/Ade1.png" alt="image" height="200px">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-8 col-md-6 col-12 my-auto">
                                     <div class="card-body ps-lg-0">
-                                        <h5 class="mb-0">Marquez Garcia</h5>
-                                        <h6 class="text-info">JS Developer</h6>
+                                        <h5 class="mb-0">Ade Ramdhani</h5>
+                                        <h6 class="text-info">IT Support</h6>
                                         <p class="mb-0">Artist is a term applied to a person who engages in an
                                             activity deemed to be an art.</p>
                                     </div>
