@@ -65,7 +65,7 @@
                                 <div class="medium fw-normal mb-2 ps-5">Terbaru</div>
                             </div>
                             <!--User1--->
-                            <div class="card w-90 mx-5 mb-2">
+                            <div class="card w-90 mx-auto mb-2">
                                 <div class="row col-12 ps-6 mb-2">
                                     <div class="d-flex flex-row justify-content-start">
                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <!--User2--->
-                            <div class="card w-90 mx-5 mb-2">
+                            <div class="card w-90 mx-auto mb-2">
                                 <div class="row col-12 ps-6 mb-2">
                                     <div class="d-flex flex-row justify-content-start">
                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
@@ -109,7 +109,7 @@
                             </div>
                             <!--User3--->
                             <div class="collapse" id="collapseExample">
-                                <div class="card w-90 mx-5 mb-2">
+                                <div class="card w-90 mx-auto mb-2">
                                     <div class="row col-12 ps-6 mb-2">
                                         <div class="d-flex flex-row justify-content-start">
                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
@@ -133,7 +133,7 @@
                             </div>
                             <!--User4--->
                             <div class="collapse " id="collapseExample">
-                                <div class="card w-90 mx-5 mb-2">
+                                <div class="card w-90 mx-auto mb-2">
                                     <div class="row col-12 ps-6 mb-2">
                                         <div class="d-flex flex-row justify-content-start">
                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"

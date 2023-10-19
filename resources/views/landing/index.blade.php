@@ -177,8 +177,8 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 col-12 mt-n1">
                                     <a href="javascript:;">
-                                        <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md shadow-lg"
+                                        <div class="p-3 pe-md-0 ">
+                                            <img class="w-100 border-radius-md shadow-lg rounded-circle"
                                                 src="{{ asset('assets') }}/img/teams/Rivo.png" alt="image" height="200px">
                                         </div>
                                     </a>
@@ -200,7 +200,7 @@
                                 <div class="col-lg-4 col-md-6 col-12 mt-n1">
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md shadow-lg"
+                                            <img class="w-100 border-radius-md shadow-lg rounded-circle"
                                                 src="{{ asset('assets') }}/img/teams/Faiz2.png" alt="image" height="200px">
                                         </div>
                                     </a>
@@ -224,7 +224,7 @@
                                 <div class="col-lg-4 col-md-6 col-12 mt-n1">
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md shadow-lg"
+                                            <img class="w-100 border-radius-md shadow-lg rounded-circle"
                                                 src="{{ asset('assets') }}/img/teams/Luthfi1.png" alt="image" height="200px">
                                         </div>
                                     </a>
@@ -245,7 +245,7 @@
                                 <div class="col-lg-4 col-md-6 col-12 mt-n1">
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md shadow-lg"
+                                            <img class="w-100 border-radius-md shadow-lg rounded-circle"
                                                 src="{{ asset('assets') }}/img/teams/Ade1.png" alt="image" height="200px">
                                         </div>
                                     </a>
