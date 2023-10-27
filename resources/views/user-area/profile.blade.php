@@ -62,7 +62,7 @@
                                     <div class="col-lg-12 ps-5">
                                         <div class="card-body pb-1 mt-1 rounded-pill">
 
-                                            <div class="d-flex flex-row justify-content-start mb-3">
+                                            <div class="d-flex flex-row justify-content-start ">
                                                 <img src="{{ asset('assets/img/favicon1.png') }}" alt="avatar 1"
                                                     style="width: 45px; height: 100%;">
                                                 <div class="p-3 ms-3"
@@ -86,7 +86,7 @@
                                                     <a class="btn btn-link" data-bs-toggle="collapse"
                                                         href="#collapseIndonesia" role="button" aria-expanded="false"
                                                         aria-controls="collapseIndonesia">
-                                                        <span class="small text-info icon-move-right ">
+                                                        <span class="small text-info icon-move-right " style="text-transform: capitalize">
                                                             Translate<i class="fas fa-arrow-right text-sm ms-1"></i>
                                                         </span>
                                                     </a>

@@ -148,7 +148,7 @@
                                         <div class="justify-content-end">
                                             <a class="btn btn-link" data-bs-toggle="collapse" href="#collapseNotif"
                                                 role="button" aria-expanded="false" aria-controls="collapseNotif">
-                                                <span class="small text-info icon-move-right ">
+                                                <span class="small text-info icon-move-right " style="text-transform: capitalize">
                                                     More<i class="fas fa-arrow-right text-sm ms-1"></i>
                                                 </span>
                                             </a>

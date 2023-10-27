@@ -67,7 +67,7 @@
                                                 <a class="btn btn-link" data-bs-toggle="collapse"
                                                     href="#collIndonesia" role="button" aria-expanded="false"
                                                     aria-controls="collIndonesia">
-                                                    <span class="small text-info icon-move-right ">
+                                                    <span class="small text-info icon-move-right " style="text-transform: capitalize">
                                                         Translate<i class="fas fa-arrow-right text-sm ms-1"></i>
                                                     </span>
                                                 </a>
@@ -200,7 +200,7 @@
                                 <div class="d-flex justify-content-end mx-4">
                                     <a class="btn btn-link" data-bs-toggle="collapse" href="#collapseExample"
                                         role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        <span class="small text-info icon-move-right ">
+                                        <span class="small text-info icon-move-right " style="text-transform: capitalize">
                                             More<i class="fas fa-arrow-right text-sm ms-1"></i>
                                         </span>
                                     </a>
