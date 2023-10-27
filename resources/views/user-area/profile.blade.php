@@ -71,6 +71,27 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="collapse" id="collapseIndonesia">
+                                                <div class="d-flex flex-row justify-content-start pt-3 mx-auto">
+                                                    <div class="p-3 ms-6"
+                                                        style="border-radius: 10px; background-color: rgba(57, 192, 237,.2);">
+                                                        <div class="small mb-0">
+                                                            {{ $item->question->question_english }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container">
+                                                <div class="justify-content-start mx-4">
+                                                    <a class="btn btn-link" data-bs-toggle="collapse"
+                                                        href="#collapseIndonesia" role="button" aria-expanded="false"
+                                                        aria-controls="collapseIndonesia">
+                                                        <span class="small text-info icon-move-right ">
+                                                            Translate<i class="fas fa-arrow-right text-sm ms-1"></i>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
 
                                             <div class="d-flex flex-row justify-content-end ">
                                                 <div>

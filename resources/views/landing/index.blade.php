@@ -9,8 +9,8 @@
             <div class="container mt-1">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mx-auto my-auto">
-                        <h1 class="text-white">Welcome to the Nulish website</h1>
-                        <p class="lead mb-4 text-white opacity-8">Let's Learn English from an early age</p>
+                        <h1 class="text-white" style="font-family: 'Times New Roman', Times, serif">Welcome to the Nulish website</h1>
+                        <p class="lead mb-4 text-white opacity-8" style="font-family: Arial, Helvetica, sans-serif">Let's Learn English from an early age</p>
                         @guest
                             <a type="submit" class="btn btn-info text-dark" href="{{ route('register') }}"
                                 data-bs-toggle="tooltip" data-bs-placement="right" title="Test">Your Ability Test?</a>
@@ -240,19 +240,19 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
-                        <div class="card card-profile mt-lg-4 mt-5 z-index-2">
+                        <div class="card card-profile mt-lg-4 mt-5">
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 col-12 mt-n1">
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md shadow-lg rounded-circle"
+                                            <img class="w-100 border-radius-md shadow-lg rounded-circle opacity-2"
                                                 src="{{ asset('assets') }}/img/teams/Ade1.png" alt="image" height="200px">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-8 col-md-6 col-12 my-auto">
                                     <div class="card-body ps-lg-0">
-                                        <h5 class="mb-0">Ade Ramdhani</h5>
+                                        <h5 class="mb-0" style="text-decoration: line-through">Ade Ramdhani</h5>
                                         <h6 class="text-info">IT Support</h6>
                                         <p class="mb-0">Artist is a term applied to a person who engages in an
                                             activity deemed to be an art.</p>

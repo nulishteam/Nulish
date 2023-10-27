@@ -61,199 +61,250 @@
 
     <!-- END Testimonials w/ user image & text & info -->
     <!-- START Blogs w/ 4 cards w/ image & text & link -->
-    <div class="card card-body blur shadow-blur mx-3 mx-md-4">
+
+
+    <div class="card card-body mx-3 mx-md-4">
+        {{-- <span class="mask opacity-8 my-6"
+            style="background-image: url('assets/img/logos/Logo-UT.png'); height:140vh; background-attachment:fixed;"> --}}
+            <div class="mask opacity-4 rounded-3" style="background-image: url('assets/img/logos/Logo-UT.png');  background-attachment:fixed;">
+        </div>
+        {{-- </span> --}}
         <section class="py-3">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="mb-5 text-center text-dark">Check My Social Media</h3>
+                        <h3 class="mb-5 text-center" style="font-family: 'Times New Roman', Times, serif; font-color:black;">
+                            Check My Social Media</h3>
                     </div>
                 </div>
 
                 <div class="row">
-                    <span class="mask opacity-3 my-6" style="background-image: url('assets/img/logos/Logo-UT.png'); height:150vh;">
-                        {{-- <div class="mask rounded-3" style="background-color: rgba(179, 175, 175, 0.6); ">
-                        </div> --}}
-                    </span>
+
                     <div class="col-lg-3 col-sm-6 mb-2 my-2">
-                        <div class="card">
-                            <div class="card-header p-0 position-relative text-center">
+                        <div class="row">
+                            <div class="p-0 position-relative text-center">
                                 <a class="d-block blur-shadow-image">
                                     <img src="../assets/img/teams/Rivo.png" alt="img-blur-shadow" width="130px"
                                         class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body px-0 text-center">
-                                <h5>
-                                    <a href="javascript:;" class="text-dark font-weight-bold">Rivo Ardian</a>
-                                </h5>
-                                <span class="text-dark">
+                                <div>
+                                    <a href="javascript:;" class="font-weight-bold" style="color:black;">Rivo Ardian</a>
+                                </div>
+                                <span style="color:black;">
                                     Project Leader
                                 </span>
-                                <p>
+                                <div style="color:black;">
                                     Prodi Sistem Informasi
-                                </p>
+                                </div>
                                 {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
                                     href="https://www.instagram.com/cak_ipho/">Follow</a> --}}
-                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://www.instagram.com/cak_ipho/" target="_blank">
-                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://github.com/cakipho"
-                                                target="_blank">
-                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
-                                            </a>
-                                        </li>
+                                <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link pe-1" href="https://www.instagram.com/cak_ipho/"
+                                            target="_blank">
+                                            <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom" title="Instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link pe-1" href="https://github.com/cakipho" target="_blank">
+                                            <i class="fab fa-github text-lg opacity-8 text-info"
+                                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
+                                        </a>
+                                    </li>
 
-                                    </ul>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 mb-2 my-2">
-                        <div class="card">
-                            <div class="card-header p-0 position-relative text-center">
-                                <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Faiz2.png" alt="img-blur-shadow" width="130px"
-                                        class="img-fluid shadow border-radius-lg" loading="lazy">
-                                </a>
+
+                        <div class="p-0 position-relative text-center">
+                            <a class="d-block blur-shadow-image">
+                                <img src="../assets/img/teams/Faiz2.png" alt="img-blur-shadow" width="130px"
+                                    class="img-fluid shadow border-radius-lg" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="card-body px-0 text-center">
+                            <h5>
+                                <a href="javascript:;" class="font-weight-bold" style="color:black;">Faiz Nurhadi</a>
+                            </h5>
+                            <span style="color:black;">
+                                Technical Leader
+                            </span>
+                            <div style="color:black;">
+                                Prodi Sistem Informasi
                             </div>
-                            <div class="card-body px-0 text-center">
-                                <h5>
-                                    <a href="javascript:;" class="text-dark font-weight-bold">Faiz Nurhadi</a>
-                                </h5>
-                                <span class="text-dark">
-                                    Technical Leader
-                                </span>
-                                <p>
-                                    Prodi Sistem Informasi
-                                </p>
-                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                            {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
                                     href="https://www.instagram.com/fa_faiz099/">Follow</a> --}}
-                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://www.instagram.com/fa_faiz099/" target="_blank">
-                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://github.com/faiz099"
-                                                target="_blank">
-                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
-                        <div class="card">
-                            <div class="card-header p-0 position-relative text-center">
-                                <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Luthfi1.png" alt="img-blur-shadow" width="130px"
-                                        class="img-fluid shadow border-radius-lg" loading="lazy">
-                                </a>
-                            </div>
-                            <div class="card-body px-0 text-center">
-                                <h5>
-                                    <a href="javascript:;" class="text-dark font-weight-bold">Muhammad Luthfi Hamid</a>
-                                </h5>
-                                <span class="text-dark">
-                                    Front End Dev
-                                </span>
-                                <p>
-                                    Prodi Sistem Informasi
-                                </p>
-                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                    href="https://www.instagram.com/lutpi_hamid/">Follow</a> --}}
-                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://www.instagram.com/lutpi_hamid/" target="_blank">
-                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://github.com/Luthfi1995"
-                                                target="_blank">
-                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
-                        <div class="card">
-                            <div class="card-header p-0 position-relative text-center">
-                                <a class="d-block blur-shadow-image">
-                                    <img src="../assets/img/teams/Ade1.png" alt="img-blur-shadow" width="130px"
-                                        class="img-fluid shadow border-radius-lg" loading="lazy">
-                                </a>
-                            </div>
-                            <div class="card-body px-0 text-center">
-                                <h5>
-                                    <a href="javascript:;" class="text-dark font-weight-bold">Ade Ramdhani</a>
-                                </h5>
-                                <span class="text-dark">
-                                    IT Support
-                                </span>
-                                <p>
-                                    Prodi Sistem Informasi
-                                </p>
-                                {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
-                                    href="https://www.instagram.com/mraderamdani/">Follow</a> --}}
-                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://www.instagram.com/mraderamdani/" target="_blank">
-                                                <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://github.com/aderamdani"
-                                                target="_blank">
-                                                <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Github"></i>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-lg-3 col-sm-6 mx-auto ">
-                            <div class="card">
-                                <div class="card-header p-0 position-relative text-center">
-                                    <a class="d-block blur-shadow-image">
-                                        <img src="../assets/img/teams/dospem.jpeg" alt="img-blur-shadow" width="130px"
-                                            class="img-fluid shadow border-radius-lg" loading="lazy">
+                            <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.instagram.com/fa_faiz099/"
+                                        target="_blank">
+                                        <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Instagram"></i>
                                     </a>
-                                </div>
-                                <div class="card-body px-0 text-center">
-                                    <h5>
-                                        <a href="javascript:;" class="text-dark font-weight-bold">Dian Nurdiana, S.Kom.,M.Kom.</a>
-                                    </h5>
-                                    <p>
-                                        Dosen Pembimbing
-                                        Prodi Sistem Informasi
-                                    </p>
-                                    <ul class="d-flex flex-row ms-n3 nav justify-content-center">
-                                        <li class="nav-item">
-                                            <a class="nav-link pe-1" href="https://www.instagram.com/nulishofficial/" target="_blank">
-                                                <i class="fab fa-instagram text-lg opacity-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Instagram"></i>
-                                            </a>
-                                        </li>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://github.com/faiz099" target="_blank">
+                                        <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Github"></i>
+                                    </a>
+                                </li>
 
+                            </ul>
+                        </div>
 
-                                    </ul>
-                                </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
+
+                        <div class="p-0 position-relative text-center">
+                            <a class="d-block blur-shadow-image">
+                                <img src="../assets/img/teams/Luthfi1.png" alt="img-blur-shadow" width="130px"
+                                    class="img-fluid shadow border-radius-lg" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="card-body px-0 text-center">
+                            <h5>
+                                <a href="javascript:;" class="font-weight-bold" style="color:black;">Muhammad Luthfi Hamid</a>
+                            </h5>
+                            <span style="color:black;">
+                                Front End Dev
+                            </span>
+                            <div style="color:black;">
+                                Prodi Sistem Informasi
                             </div>
+                            {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/lutpi_hamid/">Follow</a> --}}
+                            <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.instagram.com/lutpi_hamid/"
+                                        target="_blank">
+                                        <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://github.com/Luthfi1995" target="_blank">
+                                        <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Github"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-2 my-2">
+
+                        <div class="p-0 position-relative text-center">
+                            <a class="d-block blur-shadow-image">
+                                <img src="../assets/img/teams/Ade1.png" alt="img-blur-shadow" width="130px"
+                                    class="img-fluid shadow border-none opacity-2" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="card-body px-0 text-center">
+                            <h5>
+                                <a href="javascript:;" class="text-dark font-weight-bold"
+                                    style="text-decoration: line-through" style="color:black;">Ade Ramdhani</a>
+                            </h5>
+                            <span style="color:black;">
+                                IT Support
+                            </span>
+                            <div style="color:black;">
+                                Prodi Sistem Informasi
+                            </div>
+                            {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/mraderamdani/">Follow</a> --}}
+                            <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.instagram.com/mraderamdani/"
+                                        target="_blank">
+                                        <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://github.com/aderamdani" target="_blank">
+                                        <i class="fab fa-github text-lg opacity-8 text-info" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Github"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
+                    <div class="row flex-row justify-content-center">
+
+                        <div class="p-0 position-relative text-center">
+                            <a class="d-block blur-shadow-image">
+                                <img src="../assets/img/teams/dospem1.png" alt="img-blur-shadow" width="130px"
+                                    class="img-fluid shadow border-radius-lg" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="card-body px-0 text-center">
+                            <h5>
+                                <a href="javascript:;" class="font-weight-bold" style="color:black;">Dian Nurdiana,
+                                    S.Kom.,M.Kom.</a>
+                            </h5>
+
+                            <span style="color:black;">
+                                Dosen Pembimbing
+                            </span>
+                            <div style="color:black;">
+                                Prodi Sistem Informasi
+                            </div>
+                            {{-- <a type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0"
+                                    href="https://www.instagram.com/lutpi_hamid/">Follow</a> --}}
+                            <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.instagram.com/nulishofficial/"
+                                        target="_blank">
+                                        <i class="fab fa-instagram text-lg opacity-8 " data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="Instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    {{-- <div class="row my-4">
+                        <div class="col-lg-3 col-sm-6 mx-auto ">
+
+                            <div class="p-0 position-relative text-center">
+                                <a class="d-block blur-shadow-image">
+                                    <img src="../assets/img/teams/dospem.jpeg" alt="img-blur-shadow" width="130px"
+                                        class="img-fluid transparent shadow border-radius-lg" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="card-body px-0 text-center">
+                                <h5>
+                                    <a href="javascript:;" class="text-dark font-weight-bold">Dian Nurdiana,
+                                        S.Kom.,M.Kom.</a>
+                                </h5>
+                                <p>
+                                    Dosen Pembimbing
+                                    Prodi Sistem Informasi
+                                </p>
+                                <ul class="d-flex flex-row ms-n3 nav justify-content-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link pe-1" href="https://www.instagram.com/nulishofficial/"
+                                            target="_blank">
+                                            <i class="fab fa-instagram text-lg opacity-8" data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom" title="Instagram"></i>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div> --}}
                 </div>
                 {{-- <div class="row row-cols-1 row-cols-md-4 g-4">
                     <div class="col">
@@ -322,8 +373,8 @@
 
             </div>
 
-    </section>
-    <!-- END Blogs w/ 4 cards w/ image & text & link -->
+        </section>
+        <!-- END Blogs w/ 4 cards w/ image & text & link -->
 
     </div>
 </x-template.landing>

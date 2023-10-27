@@ -22,7 +22,7 @@ class ProfileController extends Controller
             abort(404);
         }
         $now = new Carbon();
-        $answers = Answer::where('user_id', $user->id)->orderBy('created_at', 'DESC')->with('question')->paginate(20);
+        $answers = Answer::where('user_id', $user->id)->orderBy('created_at', 'DESC')->with('question')->paginate(10);
         return view('user-area.profile', compact('user', 'answers', 'now'));
     }
 
