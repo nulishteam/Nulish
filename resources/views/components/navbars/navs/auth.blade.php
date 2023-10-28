@@ -149,7 +149,7 @@
                                             <a class="btn btn-link" data-bs-toggle="collapse" href="#collapseNotif"
                                                 role="button" aria-expanded="false" aria-controls="collapseNotif">
                                                 <span class="small text-info icon-move-right " style="text-transform: capitalize">
-                                                    More<i class="fas fa-arrow-right text-sm ms-1"></i>
+                                                    More <i class="fas fa-solid fa-hand-point-right fa-bounce"></i>
                                                 </span>
                                             </a>
                                         </div>

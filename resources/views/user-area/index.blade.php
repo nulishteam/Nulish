@@ -19,35 +19,16 @@
                                             Questions!
                                             <hr>
                                         </h4>
-
-                                        <div class="d-flex flex-row justify-content-start mb-0 pt-1">
-                                            <img src="{{ asset('assets/img/favicon1.png') }}" alt="avatar 1"
-                                                style="width: 45px; height: 100%;">
-                                            <div class="p-3 ms-3"
-                                                style="border-radius: 10px; background-color: rgba(57, 192, 237,.2);">
-                                                <div class="small mb-0">
-                                                    <span class="text-dark">
-                                                        @if (isset($question))
-                                                            {{ $question->question_english }}
-                                                            <input type="hidden" name="q_key"
-                                                                value="{{ $question->question_key }}" />
-                                                        @else
-                                                            <strong class="text-warning">No questions available for you.
-                                                                Looks like
-                                                                you have exceeded the maximum level</strong>
-                                                        @endif
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="collapse" id="collIndonesia">
-                                            <div class="d-flex flex-row justify-content-start pt-3 mx-auto">
-                                                <div class="p-3 ms-6"
+                                        <div class="col">
+                                            <div class="d-flex flex-row justify-content-start pt-1">
+                                                <img src="{{ asset('assets/img/favicon1.png') }}" alt="avatar 1"
+                                                    style="width: 45px; height: 100%;">
+                                                <div class="p-3 ms-3"
                                                     style="border-radius: 10px; background-color: rgba(57, 192, 237,.2);">
                                                     <div class="small mb-0">
                                                         <span class="text-dark">
                                                             @if (isset($question))
-                                                                {{ $question->question_indonesia }}
+                                                                {{ $question->question_english }}
                                                                 <input type="hidden" name="q_key"
                                                                     value="{{ $question->question_key }}" />
                                                             @else
@@ -56,22 +37,64 @@
                                                                     Looks like
                                                                     you have exceeded the maximum level</strong>
                                                             @endif
-
                                                         </span>
                                                     </div>
                                                 </div>
+
                                             </div>
+                                            <div class="d-flex flex-row justify-content-start mx-5">
+                                                <a type="button" class="btn btn-link" data-bs-toggle="popover"
+                                                data-bs-placement="right" data-bs-custom-class="custom-popover"
+                                                data-bs-content="
+                                            @if (isset($question)) {{ $question->question_indonesia }}
+
+                                                            @else
+                                                                <strong class="text-warning">No questions available for
+                                                                    you.
+                                                                    Looks like
+                                                                    you have exceeded the maximum level</strong> @endif
+                                                            ">
+                                                <span class="small text-info icon-move-right"
+                                                    style="text-transform: capitalize">Translate
+                                                    <i class="fas fa-regular fa-hand-point-right fa-beat"></i>
+                                                </span>
+
+                                            </a>
+                                            </div>
+
                                         </div>
-                                        <div class="container">
-                                            <div class="justify-content-start mx-4">
-                                                <a class="btn btn-link" data-bs-toggle="collapse"
+
+                                        <div class="container row">
+                                            <div class="justify-content-start mx-4 col-auto">
+                                                {{-- <a class="btn btn-link" data-bs-toggle="collapse"
                                                     href="#collIndonesia" role="button" aria-expanded="false"
                                                     aria-controls="collIndonesia">
                                                     <span class="small text-info icon-move-right " style="text-transform: capitalize">
-                                                        Translate<i class="fas fa-arrow-right text-sm ms-1"></i>
+                                                        Translate<i class="fas fa-arrow-right text-sm ms-2"></i>
                                                     </span>
-                                                </a>
+                                                </a> --}}
+
                                             </div>
+                                            {{-- <div class="collapse col" id="collIndonesia">
+                                                <div class="col-auto mx-aut pt-3">
+                                                        <div class="small mb-0">
+                                                            <span class="text-dark">
+                                                                @if (isset($question))
+                                                                    {{ $question->question_indonesia }}
+                                                                    <input type="hidden" name="q_key"
+                                                                        value="{{ $question->question_key }}" />
+                                                                @else
+                                                                    <strong class="text-warning">No questions available for
+                                                                        you.
+                                                                        Looks like
+                                                                        you have exceeded the maximum level</strong>
+                                                                @endif
+
+                                                            </span>
+                                                        </div>
+
+                                                </div>
+                                            </div> --}}
                                         </div>
                                         <div class="d-flex text-muted justify-content-start align-items-center py-2">
                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
@@ -200,8 +223,9 @@
                                 <div class="d-flex justify-content-end mx-4">
                                     <a class="btn btn-link" data-bs-toggle="collapse" href="#collapseExample"
                                         role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        <span class="small text-info icon-move-right " style="text-transform: capitalize">
-                                            More<i class="fas fa-arrow-right text-sm ms-1"></i>
+                                        <span class="small text-info icon-move-right "
+                                            style="text-transform: capitalize">
+                                            More <i class="fas fa-regular fa-hand-point-right fa-beat"></i></i>
                                         </span>
                                     </a>
                                 </div>
