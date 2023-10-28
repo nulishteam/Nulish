@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use App\Models\Answer;
 use App\Models\Feedback;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FeedbackController extends Controller
 {
@@ -35,7 +39,23 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        try {
+            $request->validate([
+                'answer_key' => 'required',
+                'feedback_text' => 'required',
+            ]);
+            $answer_id = Answer::where('answer_key', $request->answer_key)->first()->id;
+            Feedback::create([
+                'user_id' => Auth::user()->id,
+                'answer_id' => $answer_id,
+                'feedback_text' => $request->feedback_text,
+                'feedback_key' => $this->keyGen(),
+            ]);
+            return redirect()->back();
+        } catch (Exception $ex) {
+            return response()->json($ex);
+        }
     }
 
     /**
@@ -81,5 +101,17 @@ class FeedbackController extends Controller
     public function destroy(Feedback $feedback)
     {
         //
+    }
+
+    private function keyGen()
+    {
+        // $faker = Factory::create();
+        $key = Str::random(16);
+        $cek = Feedback::where('feedback_key', $key)->get('feedback_key')->count();
+        if ($cek > 0) {
+            $key = $this->keyGen();
+        }
+
+        return $key;
     }
 }

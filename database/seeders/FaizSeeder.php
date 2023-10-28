@@ -20,6 +20,7 @@ class FaizSeeder extends Seeder
             HomeItemSeeder::class,
             FAUserSeeder::class,
             AnswerSeeder::class,
+            FeedbackSeeder::class,
         ]);
     }
 }

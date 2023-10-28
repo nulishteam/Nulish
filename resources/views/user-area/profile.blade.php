@@ -86,7 +86,8 @@
                                                     <a class="btn btn-link" data-bs-toggle="collapse"
                                                         href="#collapseIndonesia" role="button" aria-expanded="false"
                                                         aria-controls="collapseIndonesia">
-                                                        <span class="small text-info icon-move-right " style="text-transform: capitalize">
+                                                        <span class="small text-info icon-move-right "
+                                                            style="text-transform: capitalize">
                                                             Translate<i class="fas fa-arrow-right text-sm ms-1"></i>
                                                         </span>
                                                     </a>
@@ -106,7 +107,8 @@
                                                     </p>
                                                 </div>
 
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                                                <img src="{{ route('img.retrieve', ['user_image', $item->user->user_image]) }}"
+                                                    class="border border-radius-md rounded rounded-circle"
                                                     alt="avatar 1" style="width: 45px; height: 100%;">
 
                                             </div>
@@ -131,49 +133,94 @@
                                             <div class="collapse" id="collapseUser-{{ $item->answer_key }}">
                                                 <div class="p-2 border border-white rounded-3">
                                                     <ul class="ps-2">
-                                                        <div class="d-flex flex-row justify-content-start">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                                                                alt="avatar 1" style="width: 45px; height: 100%;">
-                                                            <div class="container container-fluid">
-                                                                <div class="text-dark pt-1 mx-auto">Clara Croft<button
-                                                                        type="button" class="btn btn-link my-auto"
-                                                                        style="color: black;" data-bs-toggle="collapse"
-                                                                        data-bs-target="#collapsereport"
-                                                                        aria-expanded="false"
-                                                                        aria-controls="collapserepot"><i
-                                                                            class="bi bi-three-dots-vertical"></i>
+                                                        @if (count($item->feedback) > 0)
+                                                            @foreach ($item->feedback as $feedback)
+                                                                @php
+                                                                    $diffVal = $now->diffInSeconds($item->created_at);
+                                                                    $diffStr = '';
+                                                                    if ($diffVal < 60) {
+                                                                        $diffStr = $diffVal . ' seconds ago';
+                                                                    } elseif ($diffVal < 60 * 60) {
+                                                                        $diffVal = $now->diffInMinutes($item->created_at);
+                                                                        $diffStr = $diffVal . ' minutes ago';
+                                                                    } elseif ($diffVal < 24 * 60 * 60) {
+                                                                        $diffVal = $now->diffInHours($item->created_at);
+                                                                        $diffStr = $diffVal . ' hours ago';
+                                                                    } elseif ($diffVal < 7 * 24 * 60 * 60) {
+                                                                        $diffVal = $now->diffInDays($item->created_at);
+                                                                        $diffStr = $diffVal . ' days ago';
+                                                                    } else {
+                                                                        $diffStr = $item->created_at->format('d M Y');
+                                                                    }
+                                                                @endphp
+                                                                <div class="d-flex flex-row justify-content-start">
+                                                                    <img src="{{ route('img.retrieve', ['user_image', $feedback->user->user_image]) }}"
+                                                                        alt="avatar 1"
+                                                                        class="border border-radius-md rounded rounded-circle"
+                                                                        style="width: 45px; height: 100%;">
+                                                                    <div class="container container-fluid">
+                                                                        <div class="text-dark pt-1 mx-auto">
+                                                                            {{ $feedback->user->name }}<button
+                                                                                type="button"
+                                                                                class="btn btn-link my-auto"
+                                                                                style="color: black;"
+                                                                                data-bs-toggle="collapse"
+                                                                                data-bs-target="#collapsereport"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="collapserepot"><i
+                                                                                    class="bi bi-three-dots-vertical"></i>
 
-                                                                    </button>
-                                                                    <div class="collapse collapse-horizontal"
-                                                                        id="collapsereport">
-                                                                        <div class="row mx-8"
-                                                                            style="width:150px; height:50px;">
-                                                                            <h6 class="text-dark">Report</h6>
+                                                                            </button>
+                                                                            <div class="collapse collapse-horizontal"
+                                                                                id="collapsereport">
+                                                                                <div class="row mx-8"
+                                                                                    style="width:150px; height:50px;">
+                                                                                    <h6 class="text-dark">Report</h6>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
+                                                                        <div class="small mb-0 rounded-3">
+                                                                            {{ $feedback->feedback_text }}
+
+                                                                            <p
+                                                                                class="small ms-0 mb-0 rounded-3 text-muted">
+                                                                                {{ $diffStr }}</p>
+                                                                        </div>
+
                                                                     </div>
                                                                 </div>
-                                                                <div class="small mb-0 rounded-3">Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do
-                                                                    eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua.
-
-                                                                    <p class="small ms-0 mb-0 rounded-3 text-muted">
-                                                                        23:58 | 03-Okt-2023</p>
-                                                                </div>
-
+                                                            @endforeach
+                                                        @else
+                                                            <div>No Feedback</div>
+                                                        @endif
+                                                        @if (Auth::user()->level->level_weight >= 10 || (Auth::user()->id == $item->user_id && count($item->feedback) > 0))
+                                                            <div
+                                                                class="card-footer text-muted d-flex justify-content-start align-items-center col-auto">
+                                                                <img src="{{ route('img.retrieve', ['user_image', Auth::user()->user_image]) }}"
+                                                                    alt="avatar 3"
+                                                                    class="border border-radius-md rounded rounded-circle"
+                                                                    style="width: 40px; height: 100%;">
+                                                                <form class="ps-4 col" method="post" action='{{ route('feedback.store') }}'>
+                                                                    @csrf
+                                                                    <input type="hidden" name="answer_key"
+                                                                        value="{{ $item->answer_key }}">
+                                                                    <div class="row">
+                                                                        <div class="col p-0 m-0">
+                                                                            <input type="text" name="feedback_text"
+                                                                                class="form-control form-control-lg border border-secondary"
+                                                                                id="FormControlInput1"
+                                                                                placeholder="Type message">
+                                                                        </div>
+                                                                        <div class="col-auto p-0 m-0">
+                                                                            <button
+                                                                                class="ms-2 m-0 p-2 pe-3 btn btn-link btn-lg btn-secondary"
+                                                                                title="Send">
+                                                                                <i class="fas fa-paper-plane"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                </form>
                                                             </div>
-                                                        </div>
-                                                        <div
-                                                            class="card-footer text-muted d-flex justify-content-start align-items-center">
-                                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
-                                                                alt="avatar 3" style="width: 40px; height: 100%;">
-                                                            <input type="text"
-                                                                class="form-control form-control-lg border border-secondary"
-                                                                id="FormControlInput1" placeholder="Type message">
-                                                            <a class="ms-3" href="#!" data-bs-toggle="tooltip"
-                                                                data-bs-placement="bottom" title="Send"><i
-                                                                    class="fas fa-paper-plane"></i></a>
-                                                        </div>
+                                                        @endif
                                                     </ul>
 
                                                 </div>

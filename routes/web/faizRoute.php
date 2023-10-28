@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\FaizCobaController;
+use App\Http\Controllers\FeedbackController;
 
 // Route coba hanya untuk percobaan.
 Route::resource('faizCoba', FaizCobaController::class)->except(['update', 'show']);
@@ -25,4 +26,5 @@ Route::get('/assets/private/img/encrypt/dir/protect/image/{dir?}/{filename?}', [
 
 Route::prefix('user-area')->middleware('auth')->group(function () {
     Route::resource('answer', AnswerController::class)->only(['store', 'update', 'delete']);
+    Route::resource('feedback', FeedbackController::class)->except(['show, update']);
 });

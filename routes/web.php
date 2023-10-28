@@ -66,7 +66,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('level-master', LevelController::class)->except(['update', 'show']);
     Route::resource('type-master', TypeController::class)->except(['update', 'show']);
     Route::resource('user-master', UserController::class);
-    Route::resource('feedback-master', FeedbackController::class)->only(['index', 'create', 'show']);
     Route::resource('home-item-master', HomeItemController::class);
 });
 
