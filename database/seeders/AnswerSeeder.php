@@ -25,14 +25,14 @@ class AnswerSeeder extends Seeder
             $user = $users[$i];
             $uweight = $user->level->level_weight;
             $count = 0;
-            $time = Carbon::now()->addYears(-1);
+            $time = Carbon::now()->addYears(-2);
             if ($uweight < 10) {
                 foreach ($questions as $question) {
                     $now = Carbon::now();
                     $qweight = $question->level->level_weight;
                     if ($qweight <= $uweight && $count < $uweight * 100) {
                         if ($time < $now)
-                            $time = $time->addSeconds(rand(24 * 60 * 60, 7 * 24 * 60 * 60));
+                            $time = $time->addSeconds(rand(15 * 60, 7 * 24 * 60 * 60));
                         if ($time > $now)
                             $time = $now->addSecond(rand(-24 * 60 * 60, -1));
                         Answer::factory()

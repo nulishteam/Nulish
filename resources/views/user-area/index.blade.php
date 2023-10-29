@@ -118,106 +118,103 @@
                             <div class="row row-flex justify-content-center">
                                 <h4 class="col-3  mb-4 text-center bg-gradient-white rounded-3 my-3 border-bottom"
                                     style="font-family: Georgia, 'Times New Roman', Times, serif">
-                                    Activity!</h4>
+                                    Recent Activity!
+                                </h4>
                             </div>
-                            <div class="container">
+                            {{-- <div class="container">
                                 <div class="medium fw-normal mb-2 ps-5"
                                     style="font-family: Georgia, 'Times New Roman', Times, serif">New action</div>
-                            </div>
-                            <!--User1--->
-                            <div class="card w-90 mx-auto mb-2">
-                                <div class="row col-12 ps-6 mb-2">
-                                    <div class="d-flex flex-row justify-content-start">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
-                                            alt="avatar 1" style="width: 80px; height: 100%;">
-                                        <div class="col-10 mx-3">
-                                            <div class="small me-3 d-flex fw-bold justify-content-start py-2">
-                                                <a href="{{ route('profile', Auth::user()->user_key) }}">Luthfi
-                                                    hamid</a>
-                                            </div>
-                                            <div class="small  rounded-3">
-                                                Answer daily questions.</div>
-
-                                            <div class="text-xs fw-light">
-                                                <i class="fa fa-clock me-1"></i>
-                                                13 minutes ago
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--User2--->
-                            <div class="card w-90 mx-auto mb-2">
-                                <div class="row col-12 ps-6 mb-2">
-                                    <div class="d-flex flex-row justify-content-start">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
-                                            alt="avatar 1" style="width: 80px; height: 100%;">
-                                        <div class="col-10 mx-3">
-                                            <div class="small me-3 d-flex fw-bold justify-content-start py-2">
-                                                <a href="{{ route('profile', Auth::user()->user_key) }}">Rini
-                                                    handayani</a>
-                                            </div>
-                                            <div class="small  rounded-3">
-                                                Answer daily questions.</div>
-
-                                            <div class="text-xs fw-light">
-                                                <i class="fa fa-clock me-1"></i>
-                                                13 minutes ago
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--User3--->
-                            <div class="collapse" id="collapseExample">
+                            </div> --}}
+                            {{-- No Collapse  --}}
+                            @foreach ($recents1 as $item)
+                                @php
+                                    $diffVal = $now->diffInSeconds($item->created_at);
+                                    $diffStr = '';
+                                    if ($diffVal < 60) {
+                                        $diffStr = $diffVal . ' seconds ago';
+                                    } elseif ($diffVal < 60 * 60) {
+                                        $diffVal = $now->diffInMinutes($item->created_at);
+                                        $diffStr = $diffVal . ' minutes ago';
+                                    } elseif ($diffVal < 24 * 60 * 60) {
+                                        $diffVal = $now->diffInHours($item->created_at);
+                                        $diffStr = $diffVal . ' hours ago';
+                                    } elseif ($diffVal < 7 * 24 * 60 * 60) {
+                                        $diffVal = $now->diffInDays($item->created_at);
+                                        $diffStr = $diffVal . ' days ago';
+                                    } else {
+                                        $diffStr = $item->created_at->format('d M Y');
+                                    }
+                                @endphp
                                 <div class="card w-90 mx-auto mb-2">
                                     <div class="row col-12 ps-6 mb-2">
                                         <div class="d-flex flex-row justify-content-start">
-                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                                                alt="avatar 1" style="width: 80px; height: 100%;">
+                                            <img src="{{ route('img.retrieve', ['user_image', $item->user->user_image]) }}"
+                                                class=" rounded rounded-circle" alt="avatar 1"
+                                                style="width: 80px; height: 100%;">
                                             <div class="col-10 mx-3">
                                                 <div class="small me-3 d-flex fw-bold justify-content-start py-2">
-                                                    <a href="{{ route('profile', Auth::user()->user_key) }}">Angelia
-                                                        putri
-                                                    </a>
+                                                    <a
+                                                        href="{{ route('profile', $item->user->user_key) }}">{{ $item->user->name }}</a>
                                                 </div>
                                                 <div class="small  rounded-3">
-                                                    Answer daily questions.</div>
+                                                    <a href="{{ $item->link }}">{{ $item->text }}</a>
+                                                </div>
 
                                                 <div class="text-xs fw-light">
                                                     <i class="fa fa-clock me-1"></i>
-                                                    13 minutes ago
+                                                    {{ $diffStr }}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--User4--->
-                            <div class="collapse " id="collapseExample">
-                                <div class="card w-90 mx-auto mb-2">
-                                    <div class="row col-12 ps-6 mb-2">
-                                        <div class="d-flex flex-row justify-content-start">
-                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                                                alt="avatar 1" style="width: 80px; height: 100%;">
-                                            <div class="col-10 mx-3">
-                                                <div class="small me-3 d-flex fw-bold justify-content-start py-2">
-                                                    <a href="{{ route('profile', Auth::user()->user_key) }}">Dini
-                                                        Yuliani
-                                                    </a>
-                                                </div>
-                                                <div class="small  rounded-3">
-                                                    Answer daily questions.</div>
+                            @endforeach
+                            {{-- With Collapse  --}}
+                            @foreach ($recents2 as $item)
+                                @php
+                                    $diffVal = $now->diffInSeconds($item->created_at);
+                                    $diffStr = '';
+                                    if ($diffVal < 60) {
+                                        $diffStr = $diffVal . ' seconds ago';
+                                    } elseif ($diffVal < 60 * 60) {
+                                        $diffVal = $now->diffInMinutes($item->created_at);
+                                        $diffStr = $diffVal . ' minutes ago';
+                                    } elseif ($diffVal < 24 * 60 * 60) {
+                                        $diffVal = $now->diffInHours($item->created_at);
+                                        $diffStr = $diffVal . ' hours ago';
+                                    } elseif ($diffVal < 7 * 24 * 60 * 60) {
+                                        $diffVal = $now->diffInDays($item->created_at);
+                                        $diffStr = $diffVal . ' days ago';
+                                    } else {
+                                        $diffStr = $item->created_at->format('d M Y');
+                                    }
+                                @endphp
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card w-90 mx-auto mb-2">
+                                        <div class="row col-12 ps-6 mb-2">
+                                            <div class="d-flex flex-row justify-content-start">
+                                                <img src="{{ route('img.retrieve', ['user_image', $item->user->user_image]) }}"
+                                                    class=" rounded rounded-circle" alt="avatar 1"
+                                                    style="width: 80px; height: 100%;">
+                                                <div class="col-10 mx-3">
+                                                    <div class="small me-3 d-flex fw-bold justify-content-start py-2">
+                                                        <a
+                                                            href="{{ route('profile', $item->user->user_key) }}">{{ $item->user->name }}</a>
+                                                    </div>
+                                                    <div class="small  rounded-3">
+                                                        <a href="{{ $item->link }}">{{ $item->text }}</a>
+                                                    </div>
 
-                                                <div class="text-xs fw-light">
-                                                    <i class="fa fa-clock me-1"></i>
-                                                    13 minutes ago
+                                                    <div class="text-xs fw-light">
+                                                        <i class="fa fa-clock me-1"></i>
+                                                        {{ $diffStr }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                             <!---collapse-->
                             <div class="container">
                                 <div class="d-flex justify-content-end mx-4">

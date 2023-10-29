@@ -50,7 +50,7 @@ class FAUserSeeder extends Seeder
         //create fake admin account
         foreach (range(1, 5) as $i) {
             User::factory()->create([
-                'name' => 'Admin ' . $i,
+                'name' => fake()->name() . ' (Admin ' . $i . ")",
                 'email' => 'admin' . $i . '@nulish.id',
                 'password' => ('123456'),
                 'level_id' => 3,
