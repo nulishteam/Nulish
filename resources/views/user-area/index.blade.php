@@ -1,6 +1,7 @@
 <x-template.landing bodyClass="blog-author bg-gray-200">
     <x-navbars.navs.auth titlePage=''></x-navbars.navs.auth>
 
+    {{ $question }}
     <!-- Start foto user and identitas user-->
     <section class="py-lg-5">
         <div class="container d-flex justify-content-center">
@@ -44,8 +45,8 @@
                                             </div>
                                             <div class="d-flex flex-row justify-content-start mx-5">
                                                 <a type="button" class="btn btn-link" data-bs-toggle="popover"
-                                                data-bs-placement="right" data-bs-custom-class="custom-popover"
-                                                data-bs-content="
+                                                    data-bs-placement="right" data-bs-custom-class="custom-popover"
+                                                    data-bs-content="
                                             @if (isset($question)) {{ $question->question_indonesia }}
 
                                                             @else
@@ -54,12 +55,12 @@
                                                                     Looks like
                                                                     you have exceeded the maximum level</strong> @endif
                                                             ">
-                                                <span class="small text-info icon-move-right"
-                                                    style="text-transform: capitalize">Translate
-                                                    <i class="fas fa-regular fa-hand-point-right fa-beat"></i>
-                                                </span>
+                                                    <span class="small text-info icon-move-right"
+                                                        style="text-transform: capitalize">Translate
+                                                        <i class="fas fa-regular fa-hand-point-right fa-beat"></i>
+                                                    </span>
 
-                                            </a>
+                                                </a>
                                             </div>
 
                                         </div>
@@ -99,7 +100,7 @@
                                         <div class="d-flex text-muted justify-content-start align-items-center py-2">
                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                                                 alt="avatar 3" style="width: 40px; height: 100%;">
-                                            <input type="text"
+                                            <input type="text" name="answer_text"
                                                 class="form-control form-control-lg border border-secondary mx-1 p-3 ms-3"
                                                 id="exampleFormControlInput1" placeholder="Type message">
                                         </div>

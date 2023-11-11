@@ -14,6 +14,7 @@ class Answer extends Model
         'user_id',
         'question_id',
         'answer_text',
+        'answer_key',
     ];
     protected $dates = ['deleted_at'];
     protected $hidden = [

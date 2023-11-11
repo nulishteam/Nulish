@@ -41,16 +41,17 @@ class AnswerController extends Controller
     {
         // dd($request);
         try {
+            $keyGen = $this->keyGen();
             $request->validate([
                 'q_key' => 'required',
                 'answer_text' => 'required',
             ]);
             $question_id = Question::where('question_key', $request->q_key)->first()->id;
-            Answer::create([
+            $answer = Answer::create([
                 'user_id' => Auth::user()->id,
                 'question_id' => $question_id,
                 'answer_text' => $request->answer_text,
-                'answer_key' => $this->keyGen(),
+                'answer_key' => $keyGen,
             ]);
             return redirect()->route('user-area');
         } catch (Exception $ex) {
